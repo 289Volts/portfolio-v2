@@ -41,7 +41,7 @@ const Header = ({ satoshi }) => {
 					</button>
 				</div>
 				{/* Nav Menu Overlay*/}
-				<div className="absolute inset-0 h-screen">
+				<div className="absolute inset-0 h-[100dvh]">
 					{/* Nav Menu */}
 					<div className="bg-secondary w-[70%] h-full p-5 px-6 relative flex flex-col justify-between">
 						<button className="bg-white rounded-full w-[40px] aspect-square flex items-center justify-center absolute right-[-1.2rem]">
