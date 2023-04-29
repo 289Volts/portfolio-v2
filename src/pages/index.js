@@ -9,6 +9,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,16 +34,27 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+			<h1 className="">hello</h1>
+			{/* <h1 className="">{locale}</h1>
 			<section className="">
 				<h1 className="">{translate("h1")} </h1>
-				<h1 className="">{locale}</h1>
 			</section>
+			<Link href="/" locale={locale} key={locale}>
+				refresh
+			</Link>
+			{locales.map((locale) => (
+				<div className="flex gap-4" key={locale}>
+					<Link href="/" locale={locale}>
+						{locale}
+					</Link>
+				</div>
+			))} */}
 		</>
 	);
 }
 
 export async function getStaticProps({ locale, defaultLocale }) {
-	console.log(locale);
+	// console.log(locale);
 	return {
 		props: {
 			...(await serverSideTranslations(locale ?? defaultLocale, ["common", "home"])),

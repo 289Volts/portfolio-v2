@@ -2,12 +2,12 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const Layout = ({ children }) => {
+const Layout = ({ oswald, satoshi, children }) => {
 	return (
 		<>
-			<Header />
-			<main>{children}</main>
-			<Footer />
+			<Header className={satoshi} />
+			<main className={`${satoshi} text-white`}>{children}</main>
+			{/* <Footer /> */}
 		</>
 	);
 };
