@@ -57,7 +57,7 @@ export async function getStaticProps({ locale, defaultLocale }) {
 	// console.log(locale);
 	return {
 		props: {
-			...(await serverSideTranslations(locale ?? defaultLocale, ["common", "home"])),
+			...(await serverSideTranslations(locale ?? defaultLocale, ["common", "home", "header", "footer"])),
 		},
 	};
 }
