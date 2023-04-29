@@ -53,7 +53,6 @@ const Header = ({ satoshi }) => {
 							</Link>
 							<nav className="mt-5">
 								<ul className="flex flex-col gap-5">
-									
 									{navLinks.map((link) => (
 										<li className="">
 											<Link href={link.path} locale={locale} className="block">
@@ -74,7 +73,7 @@ const Header = ({ satoshi }) => {
 						{/* This part contains the options to change languages and social links */}
 						<div className="nav-bottom-section">
 							<div className="space-y-2">
-								<p className="text-sm font-medium">Change language</p>
+								<p className="text-sm font-medium">{translate("language")}</p>
 								<div className="flex items-center gap-4">
 									{locales.map((locale) => (
 										<Link href="/" locale={locale} key={locale} className="border-b-white border-b-2 font-medium">
