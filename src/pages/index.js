@@ -1,10 +1,30 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
+import success from "../../successful.json";
+import Lottie from "lottie-react";
+import { useLottie } from "lottie-react";
+import { gsap } from "gsap";
+import React, { useRef, useEffect, useState } from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+	const { locale, locales } = useRouter();
+
+	// console.log(locale, locales);
+	// const defaultOptions = {
+	// 	loop: true,
+	// 	autoplay: true,
+	// 	animationData: success,
+	// 	rendererSettings: {
+	// 		preserveAspectRatio: "xMidYMid slice",
+	// 	},
+	// };
+	const { t: translate } = useTranslation("home");
 	return (
 		<>
 			<Head>
@@ -13,9 +33,19 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main className="">
-				<h1 className="text-3xl font-bold underline">Hello world!</h1>
-			</main>
+			<section className="">
+				<h1 className="">{translate("h1")} </h1>
+				<h1 className="">{locale}</h1>
+			</section>
 		</>
 	);
+}
+
+export async function getStaticProps({ locale, defaultLocale }) {
+	console.log(locale);
+	return {
+		props: {
+			...(await serverSideTranslations(locale ?? defaultLocale, ["common", "home"])),
+		},
+	};
 }
