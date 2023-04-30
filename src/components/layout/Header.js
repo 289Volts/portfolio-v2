@@ -25,6 +25,25 @@ const navLinks = [
 	},
 ];
 
+const socialLinks = [
+	{
+		name: "Twitter",
+		path: "https://twitter.com/289volts",
+	},
+	{
+		name: "Instagram",
+		path: "https://instagram.com/_289volts",
+	},
+	{
+		name: "LinkedIn",
+		path: "https://linkedin.com/in/joshuaroland",
+	},
+	{
+		name: "GitHub",
+		path: "https://github.com/289volts",
+	},
+];
+
 const localAbrrv = ["ENG", "FRA", "ESP", "GER"];
 
 const Header = ({ satoshi }) => {
@@ -104,12 +123,27 @@ const Header = ({ satoshi }) => {
 							</Link>
 						</div>
 						{/* This part contains the options to change languages and social links */}
-						<div className="nav-bottom-section absolute bottom-[2rem]">
+						<div className="nav-bottom-section absolute bottom-[2rem] space-y-7 font-medium">
 							<div className="space-y-2">
-								<p className="text-sm font-medium">{translate("language")}</p>
+								<p className="text-sm ">Connect with me</p>
+								<div className="grid grid-cols-2 gap-2 gap-y-2">
+									{socialLinks.map((link) => (
+										<Link
+											href={link.path}
+											key={link.name}
+											className="uppercase border-b-white border-b-2 w-fit"
+											target="_blank"
+										>
+											{link.name}
+										</Link>
+									))}
+								</div>
+							</div>
+							<div className="space-y-2">
+								<p className="text-sm ">{translate("language")}</p>
 								<div className="flex items-center gap-4">
 									{locales.map((locale) => (
-										<Link href="/" locale={locale} key={locale} className="border-b-white border-b-2 font-medium">
+										<Link href="/" locale={locale} key={locale} className="border-b-white border-b-2">
 											{localAbrrv[locales.indexOf(locale)]}
 										</Link>
 									))}
