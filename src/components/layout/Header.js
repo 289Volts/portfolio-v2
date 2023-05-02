@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import hamburger from "../../../public/assets/icons/layout/hamburger.svg";
 import close from "../../../public/assets/icons/layout/close.svg";
-import sun from "../../../public/assets/icons/layout/sunny.svg";
 import { Sun, Moon, Desktop } from "./assets";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Hamburger from "./Hamburger";
+import { useTheme } from "next-themes";
 
 const navLinks = [
 	{
@@ -53,8 +52,8 @@ const localAbrrv = ["ENG", "FRA", "ESP", "GER"];
 
 const Header = ({ satoshi }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [theme, setTheme] = useState("system");
-	const [isDarkMode, setIsDarkMode] = useState(false);
+	const [mounted, setMounted] = useState(false);
+	const { theme, setTheme } = useTheme();
 	const { locale, locales } = useRouter();
 	const { t: translate } = useTranslation("header");
 
@@ -82,21 +81,9 @@ const Header = ({ satoshi }) => {
 		},
 	];
 
-	useEffect(() => {
-		const element = document.documentElement;
-		switch (theme) {
-			case "light":
-				element.classList.remove("dark");
-				setIsDarkMode(false);
-				break;
-			case "dark":
-				element.classList.add("dark");
-				setIsDarkMode(true);
-				break;
-			default:
-				break;
-		}
-	}, [theme]);
+	useEffect(() => setMounted(true), []);
+
+	if (!mounted) return null;
 
 	return (
 		<header className={`${satoshi}`}>
@@ -136,7 +123,7 @@ const Header = ({ satoshi }) => {
 							onClick={hide}
 							aria-controls="mobile-menu"
 							aria-expanded={`${isMenuOpen ? "true" : "false"}`}
-							className="bg-white rounded-full w-[40px] aspect-square flex items-center justify-center"
+							className="bg-white rounded-full w-[40px] aspect-square flex items-center justify-center border-black border-[1.5px]"
 						>
 							<Image src={close} alt="close" />
 						</button>
