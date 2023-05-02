@@ -2,13 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* :root {
+} */
+
+/* .dark {
+	@apply bg-white dark:bg-primary dark:text-white;
+} */
+
 body {
-	@apply bg-primary text-white;
+	@apply bg-white dark:bg-primary dark:text-text duration-100;
 }
 
 .nav-link:active {
 	animation: glow 0.5s ease-in-out;
-    transition: animation 0.5s ease-in-out;
+	transition: animation 0.5s ease-in-out;
 }
 
 @keyframes glow {
