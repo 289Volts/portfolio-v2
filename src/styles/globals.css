@@ -2,15 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-} */
-
-/* .dark {
-	@apply bg-white dark:bg-primary dark:text-white;
-} */
-
 body {
-	@apply bg-white dark:bg-primary dark:text-text duration-100;
+	@apply bg-white dark:bg-primary dark:text-text text-black duration-100;
 }
 
 .nav-link:active {

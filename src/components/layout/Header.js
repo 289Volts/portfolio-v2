@@ -87,10 +87,10 @@ const Header = ({ satoshi }) => {
 
 	return (
 		<header className={`${satoshi}`}>
-			<div className="mobile-wrapper relative overflow-x-clip">
+			<div className="mobile-wrapper fixed top-0 left-0 right-0 overflow-x-clip bg-white/[0.1] backdrop-blur-[2px] md:hidden">
 				<div className="p-4 flex items-center justify-between">
-					<Link href="/" locale={locale} className="text-[1.5rem]">
-						289Volts
+					<Link href="/" locale={locale} className="text-[1.5rem] font-medium">
+						289Volt<span className="text-sm">⚡</span>
 					</Link>
 
 					<div className="dark:bg-slate-800 bg-text duration-100 rounded">
