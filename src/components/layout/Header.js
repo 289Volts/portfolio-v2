@@ -93,7 +93,7 @@ const Header = ({ satoshi }) => {
 						289Volt<span className="text-sm">⚡</span>
 					</Link>
 
-					<div className="dark:bg-slate-800 bg-text duration-100 rounded">
+					<div className="dark:bg-slate-800 bg-text duration-100 rounded-full px-1">
 						{options.map((option, index) => (
 							<button onClick={() => setTheme(option.text)} key={option.text} className="w-5 h-5 rounded-full m-2">
 								{option.icon}
@@ -116,7 +116,7 @@ const Header = ({ satoshi }) => {
 					} flex flex-col`}
 				>
 					<div className="flex justify-between items-center">
-						<Link onClick={hide} href="/" locale={locale} className="text-[1.5rem]">
+						<Link onClick={hide} href="/" locale={locale} className="text-[1.5rem] font-medium">
 							289Volts
 						</Link>
 						<button
@@ -156,8 +156,8 @@ const Header = ({ satoshi }) => {
 						</div>
 						{/* This part contains the options to change languages and social links */}
 						<div className="nav-bottom-section space-y-7 font-medium">
-							<div className="space-y-2">
-								<p className="text-sm ">{translate("connect")}</p>
+							<div className="space-y-1">
+								<p className="text-sm font-medium">{translate("connect")}</p>
 								<div className="grid grid-cols-2 gap-2 gap-y-2">
 									{socialLinks.map((link) => (
 										<Link
@@ -171,8 +171,8 @@ const Header = ({ satoshi }) => {
 									))}
 								</div>
 							</div>
-							<div className="space-y-2">
-								<p className="text-sm ">{translate("language")}</p>
+							<div className="space-y-1">
+								<p className="text-sm font-medium">{translate("language")}</p>
 								<div className="flex items-center gap-4">
 									{locales.map((locale) => (
 										<Link
@@ -187,6 +187,39 @@ const Header = ({ satoshi }) => {
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div className="desktop-wrapper hidden md:block">
+				<div className="w-[90%] lg:w-[80%] mx-auto pt-4 flex items-center justify-between">
+					<Link href="/" locale={locale} className="text-[1.5rem] font-medium">
+						289Volt<span className="text-sm">⚡</span>
+					</Link>
+
+					<div className="flex items-center gap-4 p-[10px] px-3 pr-4 dark:bg-white/[0.1] bg-[#f8f6f6] rounded-full">
+						<div className="dark:bg-slate-800 bg-text duration-100 rounded-full">
+							{options.map((option) => (
+								<button onClick={() => setTheme(option.text)} key={option.text} className="w-5 h-5 rounded-full m-2">
+									{option.icon}
+								</button>
+							))}
+						</div>
+						<nav className="">
+								<ul className="flex gap-4 lg:gap-6">
+									{navLinks.map((link) => (
+										<li className="" key={link.name}>
+											<Link
+												onClick={hide}
+												href={link.path}
+												locale={locale}
+												className="uppercase font-medium"
+											>
+												{translate(link.name)}
+											</Link>
+										</li>
+									))}
+								</ul>
+							</nav>
 					</div>
 				</div>
 			</div>
