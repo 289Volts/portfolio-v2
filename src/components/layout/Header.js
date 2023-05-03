@@ -15,7 +15,7 @@ const navLinks = [
 	},
 	{
 		name: "about",
-		path: "/",
+		path: "/about",
 	},
 	{
 		name: "projects",
@@ -54,7 +54,7 @@ const Header = ({ satoshi }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [mounted, setMounted] = useState(false);
 	const { theme, setTheme } = useTheme();
-	const { locale, locales } = useRouter();
+	const { locale, locales, asPath } = useRouter();
 	const { t: translate } = useTranslation("header");
 
 	const showNav = () => {
@@ -87,13 +87,15 @@ const Header = ({ satoshi }) => {
 
 	return (
 		<header className={`${satoshi}`}>
-			<div className="mobile-wrapper fixed top-0 left-0 right-0 overflow-x-cli bg-white/[0.1] backdrop-blur-[2px] md:hidden">
+
+			<div className="mobile-wrapper fixed top-0 left-0 right-0 bg-white/[0.1] backdrop-blur-[2px] md:hidden">
+
 				<div className="p-4 flex items-center justify-between">
 					<Link href="/" locale={locale} className="text-[1.5rem] font-medium">
 						289Volt<span className="text-sm">⚡</span>
 					</Link>
 
-					<div className="dark:bg-slate-800 bg-text duration-100 rounded">
+					<div className="dark:bg-slate-800 bg-text duration-100 rounded-full px-1">
 						{options.map((option, index) => (
 							<button onClick={() => setTheme(option.text)} key={option.text} className="w-5 h-5 rounded-full m-2">
 								{option.icon}
@@ -116,7 +118,7 @@ const Header = ({ satoshi }) => {
 					} flex flex-col`}
 				>
 					<div className="flex justify-between items-center">
-						<Link onClick={hide} href="/" locale={locale} className="text-[1.5rem]">
+						<Link onClick={hide} href="/" locale={locale} className="text-[1.5rem] font-medium">
 							289Volts
 						</Link>
 						<button
@@ -156,8 +158,8 @@ const Header = ({ satoshi }) => {
 						</div>
 						{/* This part contains the options to change languages and social links */}
 						<div className="nav-bottom-section space-y-7 font-medium">
-							<div className="space-y-2">
-								<p className="text-sm ">{translate("connect")}</p>
+							<div className="space-y-1">
+								<p className="text-sm font-medium">{translate("connect")}</p>
 								<div className="grid grid-cols-2 gap-2 gap-y-2">
 									{socialLinks.map((link) => (
 										<Link
@@ -171,8 +173,8 @@ const Header = ({ satoshi }) => {
 									))}
 								</div>
 							</div>
-							<div className="space-y-2">
-								<p className="text-sm ">{translate("language")}</p>
+							<div className="space-y-1">
+								<p className="text-sm font-medium">{translate("language")}</p>
 								<div className="flex items-center gap-4">
 									{locales.map((locale) => (
 										<Link
@@ -187,6 +189,39 @@ const Header = ({ satoshi }) => {
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div className="desktop-wrapper hidden md:block">
+				<div className="w-[90%] lg:w-[80%] mx-auto pt-4 flex items-center justify-between">
+					<Link href="/" locale={locale} className="text-[1.5rem] font-medium">
+						289Volt<span className="text-sm">⚡</span>
+					</Link>
+
+					<div className="flex items-center gap-4 p-[10px] px-3 pr-4 dark:bg-white/[0.1] bg-[#f8f6f6] rounded-full">
+						<div className="dark:bg-slate-800 bg-text duration-100 rounded-full">
+							{options.map((option) => (
+								<button onClick={() => setTheme(option.text)} key={option.text} className="w-5 h-5 rounded-full m-2">
+									{option.icon}
+								</button>
+							))}
+						</div>
+						<nav className="">
+								<ul className="flex gap-4 lg:gap-6">
+									{navLinks.map((link) => (
+										<li className="" key={link.name}>
+											<Link
+												onClick={hide}
+												href={link.path}
+												locale={locale}
+												className={`${asPath === link.path ? "border-b-[2px] border-b-black dark:border-b-white" : ""} uppercase font-medium relative before:w-full before:h-[1.5px] before:bg-black before:dark:bg-white before:absolute before:bottom-[-2px] before:left-0 before:transform before:scale-x-0 before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100 before:origin-left`}
+											>
+												{translate(link.name)}
+											</Link>
+										</li>
+									))}
+								</ul>
+							</nav>
 					</div>
 				</div>
 			</div>
