@@ -15,7 +15,7 @@ const navLinks = [
 	},
 	{
 		name: "about",
-		path: "/",
+		path: "/about",
 	},
 	{
 		name: "projects",
@@ -54,7 +54,7 @@ const Header = ({ satoshi }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [mounted, setMounted] = useState(false);
 	const { theme, setTheme } = useTheme();
-	const { locale, locales } = useRouter();
+	const { locale, locales, asPath } = useRouter();
 	const { t: translate } = useTranslation("header");
 
 	const showNav = () => {
@@ -212,7 +212,7 @@ const Header = ({ satoshi }) => {
 												onClick={hide}
 												href={link.path}
 												locale={locale}
-												className="uppercase font-medium"
+												className={`${asPath === link.path ? "border-b-[2px] border-b-black dark:border-b-white" : ""} uppercase font-medium relative before:w-full before:h-[1.5px] before:bg-black before:dark:bg-white before:absolute before:bottom-[-2px] before:left-0 before:transform before:scale-x-0 before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100 before:origin-left`}
 											>
 												{translate(link.name)}
 											</Link>
