@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 body {
-	@apply bg-white dark:bg-primary dark:text-text text-black duration-100;
+	@apply bg-white dark:bg-base dark:text-text text-black duration-100;
+}
+
+:focus {
+	@apply outline-2 outline-blue-500;
 }
 
 .nav-link:active {
