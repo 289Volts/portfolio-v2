@@ -55,15 +55,15 @@ export default function Home() {
 						</h1>
 						<p className="font-medium text-[1.2rem] leading-[1.5]">{translate("heroSubtitle")}</p>
 					</div>
-					<div className="flex items-center gap-4 font-bold uppercase text-sm">
+					<div className="flex flex-col items-center gap-4 font-bold uppercase text-s">
 						<Link
-							className="dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
+							className="w-full text-center dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
 							href="/#contact"
 						>
 							{translate("heroCta1")}
 						</Link>
 						<Link
-							className="dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
+							className="w-full text-center dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
 							href="/#value"
 						>
 							{translate("heroCta2")}
