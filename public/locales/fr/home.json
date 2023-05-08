@@ -1,3 +1,19 @@
 {
-	"h1": "Un en-tête, pour illustrer le routage"
+	"heroHeading": "UNE MAUVAISE EMBAUCHE PEUT VOUS COÛTER 3x LEUR SALAIRE.",
+	"heroSubtitle": "Aujourd'hui, chaque centime de profit compte. En tant que tel, je souhaite apporter mes compétences techniques et mon expérience à cet avantage.",
+	"heroCta1": "Travaille avec moi",
+	"heroCta2": "Me montrer comment",
+	"valuePropositionHeading": "Ce que je peux faire pour toi",
+	"valuePropositionSubtitle1": "Je sais qu'il y a beaucoup d'argent perdu lorsque les clients n'ont pas une bonne expérience avec votre produit car il est mal optimisé et ne répond pas. C'est encore pire si vous ne pouvez pas vous trouver facilement en ligne ou si vous ne pouvez pas vous trouver du tout.",
+	"valuePropositionSubtitle2": "C'est ce que je propose de résoudre pour vous grâce à mes compétences techniques afin que vous puissiez maximiser vos profits et fidéliser vos clients.",
+	"valuePropositionCta1": "Travaille avec moi",
+	"benefitsHeading": "Avantages de m'embaucher",
+	"benefit1Heading": "Clients satisfaits",
+	"benefit1Subtitle": "Parce que le client est roi, il doit être satisfait de l'expérience de votre site Web. J'optimiserai soigneusement votre site Web pour la vitesse et les performances afin que vous ne perdiez pas de clients en raison d'une mauvaise expérience.",
+	"benefit2Heading": "Augmentation des revenus et de la visibilité",
+	"benefit2Subtitle": "Je vous aiderai à augmenter vos revenus en m'assurant que votre site Web est optimisé pour les moteurs de recherche afin que vos clients puissent vous trouver facilement.",
+	"benefit3Heading": "Économiser de l'argent",
+	"benefit3Subtitle": "Je comprends à quel point le temps est précieux et c'est pourquoi je travaille de manière proactive afin qu'avec peu ou pas de supervision, je fasse le travail de manière excellente.",
+	"aboutHeading": "Une petite introduction sur moi",
+	"aboutSubtitle": "Je m'appelle Roland, un développeur frontend qui aide les entreprises à maximiser leurs profits grâce à la fidélisation de la clientèle en développant des sites Web et des applications Web accessibles, bien optimisés et performants qui répondront aux besoins de votre entreprise. J'ai de l'expérience avec un large éventail de technologies et de frameworks tels que React, Node, Express, MongoDB, NextJs, Javascript, TailwindCss, Git."
 }
