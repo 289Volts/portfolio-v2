@@ -1,3 +1,19 @@
 {
-	"h1": "Un encabezado, para demostrar el enrutamiento"
+	"heroHeading": "UNA MAL CONTRATACIÓN PUEDE COSTARLE 3 veces SU SALARIO.",
+	"heroSubtitle": "Hoy cada centavo de ganancia cuenta. Como tal, me gustaría contribuir con mis habilidades técnicas y experiencia a ese beneficio",
+	"heroCta1": "Trabaja conmigo",
+	"heroCta2": "Muéstrame cómo",
+	"valuePropositionHeading": "Así es como puedo ayudarte",
+	"valuePropositionSubtitle1": "Sé que se pierde mucho dinero cuando los clientes tienen una mala experiencia con su producto debido a que está mal optimizado y no responde. Es aún peor si no pueden encontrarlo fácilmente en línea o no pueden encontrarlo en absoluto.",
+	"valuePropositionSubtitle2": "Estos son los problemas que ofrezco para ayudarlo a resolver a través de mis habilidades técnicas para que pueda maximizar las ganancias y retener a sus clientes.",
+	"valuePropositionCta1": "Trabaja conmigo",
+	"benefitsHeading": "Beneficios de contratarme",
+	"benefit1Heading": "Clientes felices",
+	"benefit1Subtitle": "Debido a que el cliente es el rey, deben estar satisfechos con su experiencia en el sitio web. Optimizaré cuidadosamente la velocidad y el rendimiento de su sitio web para que no pierda clientes debido a una mala experiencia.",
+	"benefit2Heading": "Mayores ingresos y visibilidad",
+	"benefit2Subtitle": "Lo ayudaré a aumentar sus ingresos asegurándome de que su sitio web esté optimizado para los motores de búsqueda para que sus clientes puedan encontrarlo fácilmente.",
+	"benefit3Heading": "Ahorrar dinero",
+	"benefit3Subtitle": "Entiendo lo valioso que es el tiempo y es por eso que trabajo de manera proactiva para que con poca o ninguna supervisión, haga el trabajo de manera excelente.",
+	"aboutHeading": "Una pequeña introducción sobre mí",
+	"aboutSubtitle": "Mi nombre es Roland, un desarrollador front-end que ayuda a las empresas a maximizar las ganancias a través de la retención de clientes mediante el desarrollo de sitios web y aplicaciones web accesibles, bien optimizados y de alto rendimiento que resolverán las necesidades de su negocio. Tengo experiencia trabajando con una amplia gama de tecnologías y marcos como React, Node, Express, MongoDB, NextJs, Javascript, TailwindCss, Git."
 }

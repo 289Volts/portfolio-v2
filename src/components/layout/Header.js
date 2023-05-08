@@ -183,16 +183,7 @@ const Header = ({ satoshi, font }) => {
 								</p>
 								<div className="flex items-center gap-4">
 									{router.locales.map((locale) => (
-										<Link
-											href="/"
-											locale={locale}
-											key={locale}
-											className={`flex items-center ${
-												locale === router.asPath.split("/")[0]
-													? "border-b-[2px] border-black dark:border-white pb-1"
-													: ""
-											}`}
-										>
+										<Link href="/" locale={locale} key={locale} className={`flex items-center `}>
 											<Image
 												src={
 													locale === "en"
@@ -230,8 +221,8 @@ const Header = ({ satoshi, font }) => {
 					</div>
 				</div>
 			</div>
-			<div className="desktop-wrapper hidden md:block">
-				<div className="w-[90%] lg:w-[80%] mx-auto pt-4 flex items-center justify-between transition duration-700">
+			<div className="desktop-wrapper fixed top-0 left-0 right-0 bg-white/[0.1] backdrop-blur-[2px] hidden md:block">
+				<div className="w-[90%] lg:w-[80%] mx-auto py-4 flex items-center justify-between transition duration-300">
 					<Link href="/" locale={router.locale} className="text-[1.5rem] font-medium">
 						289Volt<span className="text-sm">⚡</span>
 					</Link>
@@ -240,6 +231,7 @@ const Header = ({ satoshi, font }) => {
 						<div className="dark:bg-slate-800 bg-[#e1dfdf] duration-100 rounded-full flex items-center">
 							{options.map((option) => (
 								<button
+									title={`${option.text} theme`}
 									onClick={() => setTheme(option.text)}
 									key={option.text}
 									className="w-5 h-5 rounded-full m-[7px]"
@@ -267,7 +259,12 @@ const Header = ({ satoshi, font }) => {
 							</ul>
 						</nav>
 						<div className="relative">
-							<button id="languageChangeToggle" className="flex items-center" onClick={() => showLang()}>
+							<button
+								title="Change Language"
+								id="languageChangeToggle"
+								className="flex items-center"
+								onClick={() => showLang()}
+							>
 								<Image
 									src={
 										router.locale === "en"

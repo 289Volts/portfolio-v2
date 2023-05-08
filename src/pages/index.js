@@ -47,7 +47,7 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<section className="h-[100dvh] flex flex-col justify-center">
+			<section className="h-[100dvh] flex flex-col justify-center md:h-screen">
 				<div className="w-[90%] lg:w-[80%] mx-auto space-y-[2.2rem]">
 					<div className="space-y-1">
 						<h1 className={`${font.className} uppercase text-[2.5rem] font-extrabold leading-[1.25]`}>
@@ -56,8 +56,18 @@ export default function Home() {
 						<p className="font-medium text-[1.2rem] leading-[1.5]">{translate("heroSubtitle")}</p>
 					</div>
 					<div className="flex items-center gap-4 font-bold uppercase text-sm">
-						<Link className="dark:bg-[#9393F9] text-text bg-red-600 px-4 py-3 rounded-3xl" href="/#contact">{translate("heroCta1")}</Link>
-						<Link className="dark:bg-[#9393F9] text-text bg-red-600 px-4 py-3 rounded-3xl" href="/#value">{translate("heroCta2")}</Link>
+						<Link
+							className="dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
+							href="/#contact"
+						>
+							{translate("heroCta1")}
+						</Link>
+						<Link
+							className="dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
+							href="/#value"
+						>
+							{translate("heroCta2")}
+						</Link>
 					</div>
 				</div>
 			</section>
