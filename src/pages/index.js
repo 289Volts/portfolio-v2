@@ -11,34 +11,34 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Inter({ subsets: ["latin"] });
+const Cost = 'COSTS'
 export default function Home() {
-	
+	const { t: translate } = useTranslation("home");
+	const { locale, locales } = useRouter();
 	const elementRef = useRef(null);
 
 	useEffect(() => {
 		const element = elementRef.current;
 
-		gsap.fromTo(
-			element,
-			{ opacity: 0, y: 100 },
-			{
-				opacity: 1,
-				y: 0,
-				duration: 1,
-				ease: "power2.out",
-				scrollTrigger: {
-					trigger: element,
-					start: "top 80%",
-					end: "bottom 20%",
-					scrub: true,
-				},
-			}
-		);
+		// 	gsap.fromTo(
+		// 		element,
+		// 		{ opacity: 0, y: 100 },
+		// 		{
+		// 			opacity: 1,
+		// 			y: 0,
+		// 			duration: 1,
+		// 			ease: "power2.out",
+		// 			scrollTrigger: {
+		// 				trigger: element,
+		// 				start: "top 80%",
+		// 				end: "bottom 20%",
+		// 				scrub: true,
+		// 			},
+		// 		}
+		// 	);
 	}, []);
-	const { locale, locales } = useRouter();
 
-	const { t: translate } = useTranslation("home");
 	return (
 		<>
 			<Head>
@@ -47,9 +47,14 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<section className="">
-				<h1 className=""></h1>
-				<p className=""></p>
+			<section className="h-screen flex items-center justify-center">
+				<div className="w-[90%] lg:w-[80%] mx-auto space-y-3">
+					<h1 className={`${font.className} uppercase text-[2.1rem] font-extrabold leading-[1.3]`}>
+						{translate("heroHeading", { cost: Cost })}{" "}
+					</h1>
+					<p className="font-medium text-[1.2rem] leading-[1.4]">{translate("heroSubtitle")}</p>
+				</div>
+				<div className=""></div>
 			</section>
 			{/* <h1 className="">{locale}</h1>
 			<section className="">

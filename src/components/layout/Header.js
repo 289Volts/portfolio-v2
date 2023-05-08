@@ -59,7 +59,7 @@ const localAbrrv = [
 	{ lang: "Deutsch", image: german, abbrv: "de" },
 ];
 
-const Header = ({ satoshi }) => {
+const Header = ({ satoshi, font }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [mounted, setMounted] = useState(false);
 	const [isLangOpen, setIsLangOpen] = useState(false);
@@ -102,21 +102,14 @@ const Header = ({ satoshi }) => {
 			hideLang();
 		}
 	};
-
-	const changeLang = () => {
-		// const locale = event.target.value;
-		console.log("work");
-		router.push(router.asPath, router.asPath, { locale: "fr" });
-	};
-
 	useEffect(() => setMounted(true), []);
 
 	if (!mounted) return null;
 
 	return (
-		<header className={`${satoshi}`}>
+		<header className={`${font}`}>
 			<div className="mobile-wrapper fixed top-0 left-0 right-0 bg-white/[0.1] backdrop-blur-[2px] md:hidden">
-				<div className="p-4 flex items-center justify-between">
+				<div className="p-3 flex items-center justify-between">
 					<Link href="/" locale={router.locale} className="text-[1.5rem] font-medium">
 						289Volt<span className="text-sm">⚡</span>
 					</Link>
@@ -184,21 +177,6 @@ const Header = ({ satoshi }) => {
 						</div>
 						{/* This part contains the options to change languages and social links */}
 						<div className="nav-bottom-section space-y-7 font-medium">
-							<div className="space-y-1">
-								<p className="text-sm font-medium">{translate("connect")}</p>
-								<div className="grid grid-cols-2 gap-2 gap-y-2 w-[60%]">
-									{socialLinks.map((link) => (
-										<Link
-											href={link.path}
-											key={link.name}
-											className="uppercase border-b-black dark:border-b-white border-b-2 w-fit"
-											target="_blank"
-										>
-											{link.name}
-										</Link>
-									))}
-								</div>
-							</div>
 							<div className="space-y-2">
 								<p className="text-sm font-medium">
 									{translate("language")} : {localAbrrv[router.locales.indexOf(router.locale)].lang}
@@ -229,6 +207,21 @@ const Header = ({ satoshi }) => {
 												key={locale}
 												className="w-7 "
 											/>
+										</Link>
+									))}
+								</div>
+							</div>
+							<div className="space-y-1">
+								<p className="text-sm font-medium">{translate("connect")}</p>
+								<div className="grid grid-cols-2 gap-2 gap-y-2 w-[60%]">
+									{socialLinks.map((link) => (
+										<Link
+											href={link.path}
+											key={link.name}
+											className="uppercase border-b-black dark:border-b-white border-b-2 w-fit"
+											target="_blank"
+										>
+											{link.name}
 										</Link>
 									))}
 								</div>

@@ -1,11 +1,11 @@
 import Layout from "@/components/layout/Layout";
-import { Oswald } from "@next/font/google";
+import { Oswald, Alumni_Sans } from "@next/font/google";
 import localFont from "@next/font/local";
 import "@/styles/globals.css";
 import { appWithTranslation } from "next-i18next";
 import { ThemeProvider } from "next-themes";
 
-const oswald = Oswald({ subsets: ["latin"] });
+const alumni = Alumni_Sans({ subsets: ["latin"] });
 
 const satoshi = localFont({
 	src: [
@@ -26,7 +26,7 @@ const satoshi = localFont({
 const App = ({ Component, pageProps }) => {
 	return (
 		<ThemeProvider attribute="class" themes={["light", "dark", "system"]}>
-			<Layout oswald={oswald.className} satoshi={satoshi.className}>
+			<Layout alumni={alumni.className} satoshi={satoshi.className}>
 				<Component {...pageProps} />
 			</Layout>
 		</ThemeProvider>
