@@ -1,3 +1,19 @@
 {
-	"h1": "Ein einfaches Beispiel"
+	"heroHeading": "EINE SCHLECHTE EINSTELLUNG KANN SIE DAS 3-fache IHRES GEHALTS KOSTEN.",
+	"heroSubtitle": "Heute zählt jeder Cent Gewinn. Dafür möchte ich meine fachlichen Fähigkeiten und Erfahrungen einbringen.",
+	"heroCta1": "Arbeite mit mir",
+	"heroCta2": "Zeig mir wie",
+	"valuePropositionHeading": "Was ich für Sie tun kann",
+	"valuePropositionSubtitle1": "Ich weiß, dass viel Geld verloren geht, wenn Kunden keine guten Erfahrungen mit Ihrem Produkt machen, weil es schlecht optimiert ist und nicht reagiert. Noch schlimmer ist es, wenn man Sie online nicht oder gar nicht finden kann.",
+	"valuePropositionSubtitle2": "Das ist es, was ich anbiete, um es durch meine technischen Fähigkeiten für Sie zu lösen, damit Sie Ihre Gewinne maximieren und Ihre Kunden binden können",
+	"valuePropositionCta1": "Arbeite mit mir",
+	"benefitsHeading": "Ihre Vorteile, wenn Sie mich beauftragen",
+	"benefit1Heading": "Zufriedene Kunden",
+	"benefit1Subtitle": "Da der Kunde König ist, muss er mit Ihrer Website-Erfahrung zufrieden sein. Ich werde Ihre Website sorgfältig auf Geschwindigkeit und Leistung optimieren, damit Sie keine Kunden aufgrund einer schlechten Erfahrung verlieren.",
+	"benefit2Heading": "Erhöhter Umsatz und Sichtbarkeit",
+	"benefit2Subtitle": "Ich helfe Ihnen, Ihren Umsatz zu steigern, indem ich dafür sorge, dass Ihre Website für Suchmaschinen optimiert ist, damit Ihre Kunden Sie leicht finden können.",
+	"benefit3Heading": "Geld sparen",
+	"benefit3Subtitle": "Ich weiß, wie wertvoll Zeit ist, und deshalb arbeite ich proaktiv, damit ich mit wenig oder ohne Aufsicht die Arbeit hervorragend erledigen kann.",
+	"aboutHeading": "Eine kleine Einführung über mich",
+	"aboutSubtitle": "Mein Name ist Roland, ein Frontend-Entwickler, der Unternehmen hilft, den Gewinn durch Kundenbindung zu maximieren, indem er zugängliche, gut optimierte und leistungsstarke Websites und Webanwendungen entwickelt, die Ihre Geschäftsanforderungen erfüllen. Ich habe Erfahrung in der Arbeit mit einer Vielzahl von Technologien und Frameworks wie React, Node, Express, MongoDB, NextJs, Javascript, TailwindCss, Git."
 }
