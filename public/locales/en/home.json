@@ -1,3 +1,11 @@
 {
-	"h1": "A heading, to demonstrate routing"
+	"heroHeading": "Hiring the wrong person costs you three times their annual salary",
+	"heroSubtitle": "Today every penny of profit counts and that is why I want to help you contribute to that profit through the offering of my technical skills and experience.",
+	"heroCta1": "Hire Me",
+	"heroCta2": "Learn More",
+	"valuePropositionHeading": "What I can do for you",
+	"valuePropositionSubtitle1": "I know there is a lot of money lost when customers do not have a good experience with your product due to it being poorly optimized and unresponsive. It is even worse if there can't easily find you you online or can't find you at all.",
+	"valuePropositionSubtitle2": "That is what I am offering to solve for you through my technical skills so that you can maximize profits and retain your customers",
+	"valuePropositionCta1": "Hire Me"
+
 }

@@ -5,7 +5,6 @@ import success from "../../successful.json";
 import Lottie from "lottie-react";
 import { useLottie } from "lottie-react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useRef, useEffect, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
@@ -13,17 +12,8 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
-gsap.registerPlugin(ScrollTrigger)
 export default function Home() {
-	// console.log(locale, locales);
-	// const defaultOptions = {
-	// 	loop: true,
-	// 	autoplay: true,
-	// 	animationData: success,
-	// 	rendererSettings: {
-	// 		preserveAspectRatio: "xMidYMid slice",
-	// 	},
-	// };
+	
 	const elementRef = useRef(null);
 
 	useEffect(() => {
@@ -57,7 +47,10 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div ref={elementRef}>Animate me as you scroll!</div>
+			<section className="">
+				<h1 className=""></h1>
+				<p className=""></p>
+			</section>
 			{/* <h1 className="">{locale}</h1>
 			<section className="">
 				<h1 className="">{translate("h1")} </h1>
