@@ -55,9 +55,9 @@ export default function Home() {
 						</h1>
 						<p className="font-medium text-[1.2rem] leading-[1.5]">{translate("heroSubtitle")}</p>
 					</div>
-					<div className="flex items-center gap-4 font-medium uppercase text-sm">
-						<Link className="dark:bg-[#9393F9] text-text bg-red-600 px-5 py-3 rounded-3xl" href="/#contact">{translate("heroCta1")}</Link>
-						<Link className="dark:bg-[#9393F9] text-text bg-red-600 px-5 py-3 rounded-3xl" href="/#value">{translate("heroCta2")}</Link>
+					<div className="flex items-center gap-4 font-bold uppercase text-sm">
+						<Link className="dark:bg-[#9393F9] text-text bg-red-600 px-4 py-3 rounded-3xl" href="/#contact">{translate("heroCta1")}</Link>
+						<Link className="dark:bg-[#9393F9] text-text bg-red-600 px-4 py-3 rounded-3xl" href="/#value">{translate("heroCta2")}</Link>
 					</div>
 				</div>
 			</section>
