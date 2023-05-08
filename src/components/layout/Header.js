@@ -92,6 +92,17 @@ const Header = ({ satoshi }) => {
 		},
 	];
 
+	const hideLang = () => {
+		setIsLangOpen(false);
+	};
+
+	const showLang = () => {
+		setIsLangOpen(true);
+		if (isLangOpen) {
+			hideLang();
+		}
+	};
+
 	const changeLang = () => {
 		// const locale = event.target.value;
 		console.log("work");
@@ -227,12 +238,12 @@ const Header = ({ satoshi }) => {
 				</div>
 			</div>
 			<div className="desktop-wrapper hidden md:block">
-				<div className="w-[90%] lg:w-[80%] mx-auto pt-4 flex items-center justify-between">
+				<div className="w-[90%] lg:w-[80%] mx-auto pt-4 flex items-center justify-between transition duration-700">
 					<Link href="/" locale={router.locale} className="text-[1.5rem] font-medium">
 						289Volt<span className="text-sm">⚡</span>
 					</Link>
 
-					<div className="flex items-center gap-4 p-[10px] py-2 px-2 pr-[14px] dark:bg-white/[0.1] bg-[#f0eeee] rounded-full">
+					<div className="flex items-center gap-5 p-[10px] py-2 px-2 pr-[14px] dark:bg-white/[0.1] bg-[#f0eeee] rounded-full">
 						<div className="dark:bg-slate-800 bg-[#e1dfdf] duration-100 rounded-full flex items-center">
 							{options.map((option) => (
 								<button
@@ -245,7 +256,7 @@ const Header = ({ satoshi }) => {
 							))}
 						</div>
 						<nav className="">
-							<ul className="flex gap-4 lg:gap-6">
+							<ul className="flex gap-4 lg:gap-5">
 								{navLinks.map((link) => (
 									<li className="" key={link.name}>
 										<Link
@@ -263,7 +274,7 @@ const Header = ({ satoshi }) => {
 							</ul>
 						</nav>
 						<div className="relative">
-							<button className="flex items-center">
+							<button id="languageChangeToggle" className="flex items-center" onClick={() => showLang()}>
 								<Image
 									src={
 										router.locale === "en"
@@ -279,12 +290,22 @@ const Header = ({ satoshi }) => {
 									className="w-7 "
 								/>
 							</button>
-							<ul className={`absolute top-[120%] bg-white w-[120px] px-3 py-2 space-y-3 border border-black rounded ${isLangOpen ? "visible" : "invisible"}`}>
+							<ul
+								aria-labelledby="languageChangeToggle"
+								className={`absolute top-[120%] right-0 bg-white w-[120px] px-3 py-2 space-y-3 border border-black rounded ${
+									isLangOpen ? "visible" : "invisible"
+								}`}
+							>
 								{router.locales.map(
 									(locale) =>
 										router.locale !== locale && (
 											<li className="" key={locale}>
-												<Link href="/" locale={locale} className="flex items-center gap-3  text-black font-medium">
+												<Link
+													onClick={() => hideLang()}
+													href="/"
+													locale={locale}
+													className="flex items-center gap-3  text-black font-medium"
+												>
 													<span className=""> {localAbrrv[router.locales.indexOf(locale)].lang}</span>
 													<Image
 														src={
@@ -305,14 +326,6 @@ const Header = ({ satoshi }) => {
 										)
 								)}
 							</ul>
-							{/* <select name="" id="" className="">
-								{router.locales.map((locale) => (
-									<option value="" className="">
-										
-										
-									</option>
-								))}
-							</select> */}
 						</div>
 					</div>
 				</div>
