@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 const font = Inter({ subsets: ["latin"] });
-const Cost = 'COSTS'
+
 export default function Home() {
 	const { t: translate } = useTranslation("home");
 	const { locale, locales } = useRouter();
@@ -47,14 +47,19 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<section className="h-screen flex items-center justify-center">
-				<div className="w-[90%] lg:w-[80%] mx-auto space-y-3">
-					<h1 className={`${font.className} uppercase text-[2.1rem] font-extrabold leading-[1.3]`}>
-						{translate("heroHeading", { cost: Cost })}{" "}
-					</h1>
-					<p className="font-medium text-[1.2rem] leading-[1.4]">{translate("heroSubtitle")}</p>
+			<section className="h-[100dvh] flex flex-col justify-center">
+				<div className="w-[90%] lg:w-[80%] mx-auto space-y-[2.2rem]">
+					<div className="space-y-1">
+						<h1 className={`${font.className} uppercase text-[2.5rem] font-extrabold leading-[1.25]`}>
+							{translate("heroHeading")}{" "}
+						</h1>
+						<p className="font-medium text-[1.2rem] leading-[1.5]">{translate("heroSubtitle")}</p>
+					</div>
+					<div className="flex items-center gap-4 font-medium uppercase text-sm">
+						<Link className="dark:bg-[#9393F9] text-text bg-red-600 px-5 py-3 rounded-3xl" href="/#contact">{translate("heroCta1")}</Link>
+						<Link className="dark:bg-[#9393F9] text-text bg-red-600 px-5 py-3 rounded-3xl" href="/#value">{translate("heroCta2")}</Link>
+					</div>
 				</div>
-				<div className=""></div>
 			</section>
 			{/* <h1 className="">{locale}</h1>
 			<section className="">
