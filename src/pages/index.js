@@ -57,13 +57,13 @@ export default function Home() {
 					</div>
 					<div className="flex flex-col md:flex-row items-center gap-4 font-bold uppercase text-s">
 						<Link
-							className="w-full text-center dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
+							className="w-full md:w-fit text-center dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
 							href="/#contact"
 						>
 							{translate("heroCta1")}
 						</Link>
 						<Link
-							className="w-full text-center dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
+							className="w-full md:w-fit text-center dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
 							href="/#value"
 						>
 							{translate("heroCta2")}
