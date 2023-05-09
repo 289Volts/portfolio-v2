@@ -72,7 +72,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="">
+			<section className="h-[75dvh]">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<h2 className={`${font.className} text-[1.5rem] font-semibold`}>{translate("valuePropositionHeading")}</h2>
 					<div className="">
