@@ -14,6 +14,9 @@ body {
 	@apply outline-2 outline-blue-500;
 }
 
+a {
+	@apply font-medium text-sm
+}
 .nav-link:active {
 	animation: glow 0.5s ease-in-out;
 	transition: animation 0.5s ease-in-out;
