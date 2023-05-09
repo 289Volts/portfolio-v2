@@ -55,15 +55,15 @@ export default function Home() {
 						</h1>
 						<p className="font-medium text-[1.2rem] leading-[1.5]">{translate("heroSubtitle")}</p>
 					</div>
-					<div className="flex flex-col md:flex-row items-center gap-4 font-bold uppercase text-sm">
+					<div className="flex flex-col md:flex-row items-center gap-4 font-bold uppercase">
 						<Link
-							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
+							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-[14px] rounded-3xl lg:dark:hover:bg-red-500 text-white"
 							href="/#contact"
 						>
 							{translate("heroCta1")}
 						</Link>
 						<Link
-							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
+							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-[14px] rounded-3xl lg:dark:hover:bg-red-500 text-white"
 							href="/#value"
 						>
 							{translate("heroCta2")}
@@ -72,18 +72,18 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="h-[75dvh]">
+			<section id="value" className="h-[75dvh]">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<h2 className={`${font.className} text-[1.5rem] font-semibold`}>{translate("valuePropositionHeading")}</h2>
-					<div className="">
-						<div className="">
+					<div className="mt-3">
+						<div className=" text-[1.1rem] space-y-2">
 							<p className="">{translate("valuePropositionSubtitle1")}</p>
 							<p className="">{translate("valuePropositionSubtitle2")}</p>
 							<p className="">{translate("valuePropositionSubtitle3")}</p>
 						</div>
-						<div className="flex">
+						<div className="flex mt-4">
 							<Link
-								className="text-center transition duration-[400ms] dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
+								className="text-center uppercase transition duration-[400ms] dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
 								href="/#contact"
 							>
 								{translate("valuePropositionCta")}
