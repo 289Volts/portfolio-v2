@@ -108,7 +108,7 @@ const Header = ({ satoshi, font }) => {
 
 	return (
 		<header className={`${font}`}>
-			<div className="mobile-wrapper fixed top-0 left-0 right-0 bg-white/[0.1] backdrop-blur-[2px] md:hidden">
+			<div className="mobile-wrapper fixed top-0 left-0 right-0 bg-white/[0.1] backdrop-blur-[8px] md:hidden">
 				<div className="p-3 flex items-center justify-between">
 					<Link href="/" locale={router.locale} className="text-[1.5rem] font-medium">
 						289Volt<span className="text-sm">⚡</span>
@@ -221,7 +221,7 @@ const Header = ({ satoshi, font }) => {
 					</div>
 				</div>
 			</div>
-			<div className="desktop-wrapper fixed top-0 left-0 right-0 bg-white/[0.1] backdrop-blur-[2px] hidden md:block">
+			<div className="desktop-wrapper fixed top-0 left-0 right-0 bg-white/[0.1] backdrop-blur-[8px] hidden md:block">
 				<div className="w-[90%] lg:w-[80%] mx-auto py-4 flex items-center justify-between transition duration-300">
 					<Link href="/" locale={router.locale} className="text-[1.5rem] font-medium">
 						289Volt<span className="text-sm">⚡</span>

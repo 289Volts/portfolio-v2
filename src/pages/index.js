@@ -50,20 +50,20 @@ export default function Home() {
 			<section className="h-[100dvh] flex flex-col justify-center md:h-screen">
 				<div className="w-[90%] lg:w-[80%] mx-auto space-y-[2.2rem]">
 					<div className="space-y-1">
-						<h1 className={`${font.className} uppercase text-[2.5rem] font-extrabold leading-[1.25]`}>
+						<h1 className={`${font.className} uppercase text-[2.2rem] font-extrabold leading-[1.25]`}>
 							{translate("heroHeading")}{" "}
 						</h1>
 						<p className="font-medium text-[1.2rem] leading-[1.5]">{translate("heroSubtitle")}</p>
 					</div>
-					<div className="flex flex-col md:flex-row items-center gap-4 font-bold uppercase">
+					<div className="flex flex-col md:flex-row items-center gap-4 font-bold uppercase text-sm">
 						<Link
-							className="w-full md:w-fit text-center dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
+							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
 							href="/#contact"
 						>
 							{translate("heroCta1")}
 						</Link>
 						<Link
-							className="w-full md:w-fit text-center dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
+							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
 							href="/#value"
 						>
 							{translate("heroCta2")}
@@ -71,20 +71,28 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			{/* <h1 className="">{locale}</h1>
+
 			<section className="">
-				<h1 className="">{translate("h1")} </h1>
-			</section>
-			<Link href="/" locale={locale} key={locale}>
-				refresh
-			</Link>
-			{locales.map((locale) => (
-				<div className="flex gap-4" key={locale}>
-					<Link href="/" locale={locale}>
-						{locale}
-					</Link>
+				<div className="w-[90%] lg:w-[80%] mx-auto">
+					<h2 className={`${font.className} text-[1.5rem] font-semibold`}>{translate("valuePropositionHeading")}</h2>
+					<div className="">
+						<div className="">
+							<p className="">{translate("valuePropositionSubtitle1")}</p>
+							<p className="">{translate("valuePropositionSubtitle2")}</p>
+							<p className="">{translate("valuePropositionSubtitle3")}</p>
+						</div>
+						<div className="flex">
+							<Link
+								className="text-center transition duration-[400ms] dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-3xl lg:dark:hover:bg-red-500 text-white"
+								href="/#contact"
+							>
+								{translate("valuePropositionCta")}
+							</Link>
+						</div>
+					</div>
 				</div>
-			))} */}
+				{/* <h1 className="">{translate("h1")} </h1> */}
+			</section>
 		</>
 	);
 }
