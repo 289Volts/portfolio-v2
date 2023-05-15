@@ -1,6 +1,6 @@
 {
-	"heroHeading": "A BAD HIRE CAN COST YOU 3x THEIR SALARY.",
-	"heroSubtitle": "Today every penny of profit counts. As such, I would like to  contribute my technical skills and experience to that benefit.",
+	"heroHeading": "Hiring the wrong person can cost you 3x their salary.",
+	"heroSubtitle": "Today every penny of profit counts. As such, I would like to contribute my technical skills and experience to help you keep yours.",
 	"heroCta1": "Work with me",
 	"heroCta2": "Show me how",
 	"valuePropositionHeading": "What I can do for you",
@@ -8,8 +8,6 @@
 	"valuePropositionSubtitle2": "As a web developer, I can offer your business a solution to these problems. I can optimize your web interface, making it faster, more responsive, and easier to navigate. Additionally, I can help you improve your online presence, making it easier for potential customers to find you and learn about your business.",
 	"valuePropositionSubtitle3": "By working with me, your business can avoid losing customers and revenue due to a poor online experience.",
 	"valuePropositionCta": "Work with me",
-	"testimonialHeading": "Can't take my word for it?",
-	"testimonialSubtitle": "Here's what my clients have to say about me",
 	"benefitsHeading": "Benefits of hiring me",
 	"benefit1Heading": "Happy Customers",
 	"benefit1Subtitle": "Because customer is king, they need to be satisfied with your website experience. I will carefully optimize your website for speed and performance so that you don't lose customers due to a poor experience.",
@@ -17,6 +15,8 @@
 	"benefit2Subtitle": "I will help you increase your revenue by making sure that your website is optimized for search engines so that your customers can find you easily.",
 	"benefit3Heading": "Save Money",
 	"benefit3Subtitle": "I understand how valuable time is and that is why I work proactively so that with little or no supervision, I will get the job done excellently.",
+	"testimonialHeading": "Can't take my word for it?",
+	"testimonialSubtitle": "Here's what my clients have to say about me",
 	"aboutHeading": "A little intro about me",
 	"aboutSubtitle": "My name is Roland, a frontend developer that helps businesses maximize profit through customer retention by developing accessible, well optimized and performant websites and web applications that will solve your business needs. I have experience working with a wide range of technologies and frameworks such as React, Node, Express, MongoDB, NextJs, Javascript, TailwindCss, Git."
 }

@@ -10,6 +10,10 @@ body {
 	@apply bg-white dark:bg-base dark:text-text text-black duration-100;
 }
 
+h2 {
+	@apply text-[1.5rem] font-semibold
+}
+
 :focus {
 	@apply outline-2 outline-blue-500;
 }

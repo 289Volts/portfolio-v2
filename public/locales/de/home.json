@@ -1,14 +1,12 @@
 {
-	"heroHeading": "EINE SCHLECHTE EINSTELLUNG KANN SIE DAS 3-fache IHRES GEHALTS KOSTEN.",
-	"heroSubtitle": "Heute zählt jeder Cent Gewinn. Dafür möchte ich meine fachlichen Fähigkeiten und Erfahrungen einbringen.",
+	"heroHeading": "Die Einstellung der falschen Person kann Sie das Dreifache ihres Gehalts kosten.",
+	"heroSubtitle": "Heute zählt jeder Cent Gewinn. Daher möchte ich meine technischen Fähigkeiten und Erfahrungen einbringen, damit Sie Ihre Fähigkeiten behalten.",
 	"heroCta1": "Arbeite mit mir",
 	"heroCta2": "Zeig mir wie",
 	"valuePropositionSubtitle1": "Ihr Unternehmen verliert erhebliche Geldbeträge, wenn Ihre Kunden schlechte Erfahrungen mit Ihren Produkten machen. Dies kann auf schlecht optimierte und nicht reagierende Weboberflächen zurückzuführen sein. Darüber hinaus ist es im heutigen digitalen Zeitalter für Ihr Unternehmen unerlässlich, eine starke Online-Präsenz zu haben. Wenn potenzielle Kunden Sie online nicht leicht finden können, kann Ihr Unternehmen leider noch größere finanzielle Verluste erleiden.",
 	"valuePropositionSubtitle2": "Als Webentwickler kann ich Ihrem Unternehmen eine Lösung für diese Probleme anbieten. Ich kann Ihre Weboberfläche optimieren, damit sie schneller, reaktionsschneller und einfacher zu navigieren ist. Darüber hinaus kann ich Ihnen helfen, Ihre Online-Präsenz zu verbessern, damit potenzielle Kunden Sie leichter finden und mehr über Ihr Unternehmen erfahren können.",
 	"valuePropositionSubtitle3": "Durch die Zusammenarbeit mit mir kann Ihr Unternehmen vermeiden, Kunden und Einnahmen aufgrund einer schlechten Online-Erfahrung zu verlieren.",
 	"valuePropositionCta": "Arbeite mit mir",
-	"testimonialHeading": "Kannst du mich nicht beim Wort nehmen?",
-	"testimonialSubtitle": "Das sagen meine Kunden über mich",
 	"benefitsHeading": "Ihre Vorteile, wenn Sie mich beauftragen",
 	"benefit1Heading": "Zufriedene Kunden",
 	"benefit1Subtitle": "Da der Kunde König ist, muss er mit Ihrer Website-Erfahrung zufrieden sein. Ich werde Ihre Website sorgfältig auf Geschwindigkeit und Leistung optimieren, damit Sie keine Kunden aufgrund einer schlechten Erfahrung verlieren.",
@@ -16,6 +14,8 @@
 	"benefit2Subtitle": "Ich helfe Ihnen, Ihren Umsatz zu steigern, indem ich dafür sorge, dass Ihre Website für Suchmaschinen optimiert ist, damit Ihre Kunden Sie leicht finden können.",
 	"benefit3Heading": "Geld sparen",
 	"benefit3Subtitle": "Ich weiß, wie wertvoll Zeit ist, und deshalb arbeite ich proaktiv, damit ich mit wenig oder ohne Aufsicht die Arbeit hervorragend erledigen kann.",
+	"testimonialHeading": "Kannst du mich nicht beim Wort nehmen?",
+	"testimonialSubtitle": "Das sagen meine Kunden über mich",
 	"aboutHeading": "Eine kleine Einführung über mich",
 	"aboutSubtitle": "Mein Name ist Roland, ein Frontend-Entwickler, der Unternehmen hilft, den Gewinn durch Kundenbindung zu maximieren, indem er zugängliche, gut optimierte und leistungsstarke Websites und Webanwendungen entwickelt, die Ihre Geschäftsanforderungen erfüllen. Ich habe Erfahrung in der Arbeit mit einer Vielzahl von Technologien und Frameworks wie React, Node, Express, MongoDB, NextJs, Javascript, TailwindCss, Git."
 }
