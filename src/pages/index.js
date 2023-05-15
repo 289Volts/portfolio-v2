@@ -15,6 +15,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { t } from "i18next";
 import { useTheme } from "next-themes";
+import TestimonialCard from "@/components/layout/homepage/testimonialCard";
 const font = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -149,14 +150,21 @@ export default function Home() {
 				{/* <h1 className="">{translate("h1")} </h1> */}
 			</section>
 
-			<section className="">
-				<div className="w-[90%] lg:w-[80%] mx-auto">
+			<section className="mt-[4rem]">
+				<div className="w-[90%] lg:w-[80%] mx-auto overflow-x-hidden">
 					{/* {translate("testimonialSubtitle")} */}
 					<div className="">
 						<h2 className={`${font.className}`}>{translate("testimonialHeading")}</h2>
 						<p className="">{translate("testimonialSubtitle")}</p>
 					</div>
-					<div className="overflow-x-scroll"></div>
+					{/* <div className="overflow-x-scroll flex gap-4">
+						<TestimonialCard />
+						<TestimonialCard />
+						<TestimonialCard />
+						<TestimonialCard />
+						<TestimonialCard />
+						<TestimonialCard />
+					</div> */}
 				</div>
 			</section>
 		</>
