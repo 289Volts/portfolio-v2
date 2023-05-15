@@ -15,8 +15,18 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { t } from "i18next";
 import { useTheme } from "next-themes";
-import TestimonialCard from "@/components/layout/homepage/testimonialCard";
+import TestimonialCard from "@/components/layout/homepage/TestimonialCard";
 const font = Inter({ subsets: ["latin"] });
+
+import { Autoplay, Pagination } from "swiper";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 export default function Home() {
 	const { t: translate } = useTranslation("home");
@@ -150,21 +160,60 @@ export default function Home() {
 				{/* <h1 className="">{translate("h1")} </h1> */}
 			</section>
 
-			<section className="mt-[4rem]">
-				<div className="w-[90%] lg:w-[80%] mx-auto overflow-x-hidden">
+			<section className="my-[4rem]">
+				<div className="w-[90%] lg:w-[80%] mx-auto">
 					{/* {translate("testimonialSubtitle")} */}
 					<div className="">
 						<h2 className={`${font.className}`}>{translate("testimonialHeading")}</h2>
 						<p className="">{translate("testimonialSubtitle")}</p>
 					</div>
-					{/* <div className="overflow-x-scroll flex gap-4">
-						<TestimonialCard />
-						<TestimonialCard />
-						<TestimonialCard />
-						<TestimonialCard />
-						<TestimonialCard />
-						<TestimonialCard />
-					</div> */}
+					<div className="">
+						<Swiper
+							// autoplay={{
+							// 	delay: 2500,
+							// 	disableOnInteraction: false,
+							// }}
+							spaceBetween={50}
+							centeredSlides={true}
+							pagination={{ clickable: true }}
+							loop={true}
+							modules={[Pagination]}
+							className="mySwiper px-8"
+						>
+							<SwiperSlide>
+								<TestimonialCard />
+							</SwiperSlide>
+							<SwiperSlide>
+								<TestimonialCard />
+							</SwiperSlide>
+							<SwiperSlide>
+								<TestimonialCard />
+							</SwiperSlide>
+							<SwiperSlide>
+								<TestimonialCard />
+							</SwiperSlide>
+							<SwiperSlide>
+								<TestimonialCard />
+							</SwiperSlide>
+						</Swiper>
+						{/* <Swiper
+							// install Swiper modules
+							modules={[Navigation, Pagination, Scrollbar, A11y]}
+							spaceBetween={50}
+							slidesPerView={3}
+							pagination={{ clickable: true }}
+							scrollbar={{ draggable: true }}
+							// onSwiper={(swiper) => console.log(swiper)}
+							// onSlideChange={() => console.log("slide change")}
+						>
+							<SwiperSlide>Slide 1</SwiperSlide>
+							<SwiperSlide>Slide 2</SwiperSlide>
+							<SwiperSlide>Slide 3</SwiperSlide>
+							<SwiperSlide>Slide 4</SwiperSlide>
+							<SwiperSlide>Slide 4</SwiperSlide>
+							<SwiperSlide>Slide 4</SwiperSlide>
+						</Swiper> */}
+					</div>
 				</div>
 			</section>
 		</>

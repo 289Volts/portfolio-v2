@@ -11,7 +11,7 @@ body {
 }
 
 h2 {
-	@apply text-[1.5rem] font-semibold
+	@apply text-[1.5rem] font-semibold;
 }
 
 :focus {
@@ -19,7 +19,7 @@ h2 {
 }
 
 a {
-	@apply font-medium text-sm
+	@apply font-medium text-sm;
 }
 .nav-link:active {
 	animation: glow 0.5s ease-in-out;
@@ -36,4 +36,23 @@ a {
 	100% {
 		text-shadow: 0 0 0px #fff;
 	}
+}
+
+.swiper {
+	width: 100%;
+	height: 100%;
+	@apply py-8 !important;
+}
+
+.swiper-slide {
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@apply text-black rounded-lg;
+}
+
+.swiper-pagination-bullet-active {
+	@apply bg-black dark:bg-[#9393F9] !important;
 }
