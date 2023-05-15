@@ -15,7 +15,18 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { t } from "i18next";
 import { useTheme } from "next-themes";
+import TestimonialCard from "@/components/layout/homepage/TestimonialCard";
 const font = Inter({ subsets: ["latin"] });
+
+import { Autoplay, Pagination } from "swiper";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 export default function Home() {
 	const { t: translate } = useTranslation("home");
@@ -75,8 +86,8 @@ export default function Home() {
 			</Head>
 			<section className="h-[100dvh] flex flex-col justify-center md:h-screen">
 				<div className="w-[90%] lg:w-[80%] mx-auto space-y-[2.2rem]">
-					<div className="space-y-1">
-						<h1 className={`${font.className} uppercase text-[2.2rem] font-extrabold leading-[1.25]`}>
+					<div className="space-y-2">
+						<h1 className={`${font.className} capitalize text-[2.2rem] font-extrabold leading-[1.25]`}>
 							{translate("heroHeading")}{" "}
 						</h1>
 						<p className="font-medium text-[1.2rem] leading-[1.5]">{translate("heroSubtitle")}</p>
@@ -98,17 +109,17 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section id="value" className="h-[75dvh]">
+			<section id="value" className="h-[75dvh">
 				<div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-[2rem]">
 					<div className="">
-						<h2 className={`${font.className} text-[1.5rem] font-semibold`}>{translate("valuePropositionHeading")}</h2>
+						<h2 className={`${font.className}`}>{translate("valuePropositionHeading")}</h2>
 						<div className="mt-2">
-							<div className="space-y-2">
+							<div className="space-y-3">
 								<p className="">{translate("valuePropositionSubtitle1")}</p>
 								<p className="">{translate("valuePropositionSubtitle2")}</p>
 								<p className="">{translate("valuePropositionSubtitle3")}</p>
 							</div>
-							<div className="flex mt-3">
+							<div className="flex mt-4">
 								<Link
 									className="text-center uppercase transition duration-[400ms] dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 									href="/#contact"
@@ -120,7 +131,7 @@ export default function Home() {
 					</div>
 
 					<div className="">
-						<h2 className={`${font.className} text-[1.5rem] font-semibold`}>{translate("benefitsHeading")}</h2>
+						<h2 className={`${font.className}`}>{translate("benefitsHeading")}</h2>
 						<div className="space-y-3 mt-2">
 							{accordionContent.map(({ heading, subtitle }, index) => (
 								<div
@@ -147,6 +158,63 @@ export default function Home() {
 					</div>
 				</div>
 				{/* <h1 className="">{translate("h1")} </h1> */}
+			</section>
+
+			<section className="my-[4rem]">
+				<div className="w-[90%] lg:w-[80%] mx-auto">
+					{/* {translate("testimonialSubtitle")} */}
+					<div className="">
+						<h2 className={`${font.className}`}>{translate("testimonialHeading")}</h2>
+						<p className="">{translate("testimonialSubtitle")}</p>
+					</div>
+					<div className="">
+						<Swiper
+							// autoplay={{
+							// 	delay: 2500,
+							// 	disableOnInteraction: false,
+							// }}
+							spaceBetween={50}
+							centeredSlides={true}
+							pagination={{ clickable: true }}
+							loop={true}
+							modules={[Pagination]}
+							className="mySwiper px-8"
+						>
+							<SwiperSlide>
+								<TestimonialCard />
+							</SwiperSlide>
+							<SwiperSlide>
+								<TestimonialCard />
+							</SwiperSlide>
+							<SwiperSlide>
+								<TestimonialCard />
+							</SwiperSlide>
+							<SwiperSlide>
+								<TestimonialCard />
+							</SwiperSlide>
+							<SwiperSlide>
+								<TestimonialCard />
+							</SwiperSlide>
+						</Swiper>
+						{/* <Swiper
+							// install Swiper modules
+							modules={[Navigation, Pagination, Scrollbar, A11y]}
+							spaceBetween={50}
+							slidesPerView={3}
+							pagination={{ clickable: true }}
+							scrollbar={{ draggable: true }}
+							// onSwiper={(swiper) => console.log(swiper)}
+							// onSlideChange={() => console.log("slide change")}
+						>
+							<SwiperSlide>Slide 1</SwiperSlide>
+							<SwiperSlide>Slide 2</SwiperSlide>
+							<SwiperSlide>Slide 3</SwiperSlide>
+							<SwiperSlide>Slide 4</SwiperSlide>
+							<SwiperSlide>Slide 4</SwiperSlide>
+							<SwiperSlide>Slide 4</SwiperSlide>
+						</Swiper> */}
+					</div>
+				</div>
 			</section>
 		</>
 	);

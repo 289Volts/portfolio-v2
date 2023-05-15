@@ -107,8 +107,8 @@ const Header = ({ satoshi, font }) => {
 	if (!mounted) return null;
 
 	return (
-		<header className={`${font}`}>
-			<div className="mobile-wrapper fixed top-0 left-0 right-0 bg-white/[0.1] backdrop-blur-[8px] md:hidden">
+		<header className={`${font} sticky top-0 left-0 w-full`}>
+			<div className="mobile-wrapper bg-white/[0.1] backdrop-blur-[8px] overflow-x-clip md:hidden">
 				<div className="p-3 flex items-center justify-between">
 					<Link href="/" locale={router.locale} className="text-[1.5rem] font-medium">
 						289Volt<span className="text-sm">⚡</span>
@@ -132,7 +132,7 @@ const Header = ({ satoshi, font }) => {
 				</div>
 				{/* Nav Menu */}
 				<div
-					className={`absolute inset-0 h-[100dvh] transition duration-[400ms] bg-[#FFFEFE] dark:bg-secondary p-5 pl-6  ${
+					className={`absolute z-[100] inset-0 h-[100dvh] transition duration-[400ms] bg-[#FFFEFE] dark:bg-secondary p-5 pl-6  ${
 						!isMenuOpen ? "translate-x-[100%] " : "translate-x-0 "
 					} flex flex-col`}
 				>
@@ -221,7 +221,7 @@ const Header = ({ satoshi, font }) => {
 					</div>
 				</div>
 			</div>
-			<div className="desktop-wrapper fixed top-0 left-0 right-0 bg-white/[0.1] backdrop-blur-[8px] hidden md:block">
+			<div className="desktop-wrapper bg-white/[0.1] backdrop-blur-[8px] hidden md:block">
 				<div className="w-[90%] lg:w-[80%] mx-auto py-4 flex items-center justify-between transition duration-300">
 					<Link href="/" locale={router.locale} className="text-[1.5rem] font-medium">
 						289Volt<span className="text-sm">⚡</span>

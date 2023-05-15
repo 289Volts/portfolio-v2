@@ -1,14 +1,13 @@
 {
-	"heroHeading": "UNA MAL CONTRATACIÓN PUEDE COSTARLE 3 veces SU SALARIO.",
-	"heroSubtitle": "Hoy cada centavo de ganancia cuenta. Como tal, me gustaría contribuir con mis habilidades técnicas y experiencia a ese beneficio",
+	"heroHeading": "Contratar a la persona equivocada puede costarle 3 veces su salario.",
+	"heroSubtitle": "Hoy cada centavo de ganancia cuenta. Como tal, me gustaría contribuir con mis habilidades técnicas y experiencia para ayudarlo a mantener el suyo.",
 	"heroCta1": "Trabaja conmigo",
 	"heroCta2": "Muéstrame cómo",
 	"valuePropositionSubtitle1": "Su negocio perderá cantidades significativas de dinero cuando sus clientes tengan malas experiencias con sus productos. Esto puede ocurrir debido a interfaces web mal optimizadas y que no responden. Además, en la era digital actual, es fundamental que su negocio tenga una fuerte presencia en línea. Desafortunadamente, si los clientes potenciales no pueden encontrarlo fácilmente en línea, su negocio puede sufrir pérdidas financieras aún mayores.",
 	"valuePropositionSubtitle2": "Como desarrollador web, puedo ofrecerle a su empresa una solución a estos problemas. Puedo optimizar su interfaz web, haciéndola más rápida, más receptiva y más fácil de navegar. Además, puedo ayudarlo a mejorar su presencia en línea, facilitando que los clientes potenciales lo encuentren y conozcan su negocio.",
 	"valuePropositionSubtitle3": "Al trabajar conmigo, su empresa puede evitar la pérdida de clientes e ingresos debido a una mala experiencia en línea.",
 	"valuePropositionCta": "Trabaja conmigo",
-	"testimonialHeading": "¿No puedes tomar mi palabra?",
-	"testimonialSubtitle": "Esto es lo que mis clientes tienen que decir sobre mí",
+
 	"benefitsHeading": "Beneficios de contratarme",
 	"benefit1Heading": "Clientes felices",
 	"benefit1Subtitle": "Debido a que el cliente es el rey, deben estar satisfechos con su experiencia en el sitio web. Optimizaré cuidadosamente la velocidad y el rendimiento de su sitio web para que no pierda clientes debido a una mala experiencia.",
@@ -16,6 +15,8 @@
 	"benefit2Subtitle": "Lo ayudaré a aumentar sus ingresos asegurándome de que su sitio web esté optimizado para los motores de búsqueda para que sus clientes puedan encontrarlo fácilmente.",
 	"benefit3Heading": "Ahorrar dinero",
 	"benefit3Subtitle": "Entiendo lo valioso que es el tiempo y es por eso que trabajo de manera proactiva para que con poca o ninguna supervisión, haga el trabajo de manera excelente.",
+	"testimonialHeading": "¿No puedes tomar mi palabra?",
+	"testimonialSubtitle": "Esto es lo que mis clientes tienen que decir sobre mí",
 	"aboutHeading": "Una pequeña introducción sobre mí",
 	"aboutSubtitle": "Mi nombre es Roland, un desarrollador front-end que ayuda a las empresas a maximizar las ganancias a través de la retención de clientes mediante el desarrollo de sitios web y aplicaciones web accesibles, bien optimizados y de alto rendimiento que resolverán las necesidades de su negocio. Tengo experiencia trabajando con una amplia gama de tecnologías y marcos como React, Node, Express, MongoDB, NextJs, Javascript, TailwindCss, Git."
 }
