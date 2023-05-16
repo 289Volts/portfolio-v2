@@ -107,7 +107,7 @@ const Header = ({ satoshi, font }) => {
 	if (!mounted) return null;
 
 	return (
-		<header className={`${font} sticky top-0 left-0 w-full`}>
+		<header className={`${font} sticky top-0 left-0 z-[2] w-full`}>
 			<div className="mobile-wrapper bg-white/[0.1] backdrop-blur-[8px] overflow-x-clip md:hidden">
 				<div className="p-3 flex items-center justify-between">
 					<Link href="/" locale={router.locale} className="text-[1.5rem] font-medium">

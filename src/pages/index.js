@@ -15,18 +15,15 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { t } from "i18next";
 import { useTheme } from "next-themes";
-import TestimonialCard from "@/components/layout/homepage/TestimonialCard";
+import TestimonialCard from "@/components/homepage/TestimonialCard";
 const font = Inter({ subsets: ["latin"] });
-
 import { Autoplay, Pagination } from "swiper";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
 	const { t: translate } = useTranslation("home");
@@ -94,13 +91,13 @@ export default function Home() {
 					</div>
 					<div className="flex flex-col md:flex-row items-center gap-4 font-bold uppercase">
 						<Link
-							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
+							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 							href="/#contact"
 						>
 							{translate("heroCta1")}
 						</Link>
 						<Link
-							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
+							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 							href="/#value"
 						>
 							{translate("heroCta2")}
@@ -121,7 +118,7 @@ export default function Home() {
 							</div>
 							<div className="flex mt-4">
 								<Link
-									className="text-center uppercase transition duration-[400ms] dark:bg-[#9393F9] lg:hover:bg-[#9393F9] bg-red-600 px-4 py-3 rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
+									className="text-center uppercase transition duration-[400ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-3 rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 									href="/#contact"
 								>
 									{translate("valuePropositionCta")}
@@ -167,53 +164,39 @@ export default function Home() {
 						<h2 className={`${font.className}`}>{translate("testimonialHeading")}</h2>
 						<p className="">{translate("testimonialSubtitle")}</p>
 					</div>
-					<div className="">
-						<Swiper
-							// autoplay={{
-							// 	delay: 2500,
-							// 	disableOnInteraction: false,
-							// }}
-							spaceBetween={50}
-							centeredSlides={true}
-							pagination={{ clickable: true }}
-							loop={true}
-							modules={[Pagination]}
-							className="mySwiper px-8"
-						>
-							<SwiperSlide>
-								<TestimonialCard />
-							</SwiperSlide>
-							<SwiperSlide>
-								<TestimonialCard />
-							</SwiperSlide>
-							<SwiperSlide>
-								<TestimonialCard />
-							</SwiperSlide>
-							<SwiperSlide>
-								<TestimonialCard />
-							</SwiperSlide>
-							<SwiperSlide>
-								<TestimonialCard />
-							</SwiperSlide>
-						</Swiper>
-						{/* <Swiper
-							// install Swiper modules
-							modules={[Navigation, Pagination, Scrollbar, A11y]}
-							spaceBetween={50}
-							slidesPerView={3}
-							pagination={{ clickable: true }}
-							scrollbar={{ draggable: true }}
-							// onSwiper={(swiper) => console.log(swiper)}
-							// onSlideChange={() => console.log("slide change")}
-						>
-							<SwiperSlide>Slide 1</SwiperSlide>
-							<SwiperSlide>Slide 2</SwiperSlide>
-							<SwiperSlide>Slide 3</SwiperSlide>
-							<SwiperSlide>Slide 4</SwiperSlide>
-							<SwiperSlide>Slide 4</SwiperSlide>
-							<SwiperSlide>Slide 4</SwiperSlide>
-						</Swiper> */}
-					</div>
+					<Swiper
+						autoplay={{
+							delay: 3000,
+							disableOnInteraction: false,
+						}}
+						spaceBetween={50}
+						centeredSlides={true}
+						pagination={{ clickable: true }}
+						loop={true}
+						modules={[Pagination, Autoplay]}
+						className="mySwiper px-8"
+					>
+						<SwiperSlide>
+							<TestimonialCard />
+						</SwiperSlide>
+						<SwiperSlide>
+							<TestimonialCard />
+						</SwiperSlide>
+						<SwiperSlide>
+							<TestimonialCard />
+						</SwiperSlide>
+						<SwiperSlide>
+							<TestimonialCard />
+						</SwiperSlide>
+						<SwiperSlide>
+							<TestimonialCard />
+						</SwiperSlide>
+					</Swiper>
+				</div>
+			</section>
+			<section className="">
+				<div className="w-[90%] lg:w-[80%] mx-auto">
+				<ContactForm />	
 				</div>
 			</section>
 		</>
