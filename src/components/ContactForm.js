@@ -1,29 +1,37 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { sendForm } from "lib/api";
+import { useState } from "react";
 
 const schema = yup
 	.object({
-		name: yup.string().required("Please provide a name"),
+		name: yup.string().required(),
 		email: yup
 			.string()
 			.email()
 			.matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "Invalid email")
-			.required("Email is required"),
-		phone: yup.string().required("Phone number is required"),
-		subject: yup.string().required("Please enter the subject of your message"),
-		message: yup.string().required("Please leave a message"),
+			.required(),
+		phone: yup.string().required(),
+		subject: yup.string().required(),
+		message: yup.string().required(),
 	})
 	.required();
 
 const ContactForm = () => {
+	const [isSuccess, setIsSuccess] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
 	} = useForm({ mode: "onBlur", resolver: yupResolver(schema) });
 
-	const onSubmit = (data) => console.log(data);
+	const onSubmit = (data) => {
+		sendForm(data);
+		reset();
+	};
 
 	return (
 		<div>

@@ -5,8 +5,6 @@ import TinyCollapse from "react-tiny-collapse";
 import chevron from "../../public/assets/icons/chevron.svg";
 import blackChevron from "../../public/assets/icons/blackChev.svg";
 import success from "../../successful.json";
-import Lottie from "lottie-react";
-import { useLottie } from "lottie-react";
 import { gsap } from "gsap";
 import React, { useRef, useEffect, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -27,6 +25,7 @@ import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
 	const { t: translate } = useTranslation("home");
+	const { t: otherTranslate } = useTranslation("common");
 	const [isOpen, setIsOpen] = useState([]);
 	const { theme, setTheme } = useTheme();
 	// const { locale, locales } = useRouter();
@@ -159,7 +158,6 @@ export default function Home() {
 
 			<section className="my-[4rem]">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
-					{/* {translate("testimonialSubtitle")} */}
 					<div className="">
 						<h2 className={`${font.className}`}>{translate("testimonialHeading")}</h2>
 						<p className="">{translate("testimonialSubtitle")}</p>
@@ -194,17 +192,21 @@ export default function Home() {
 					</Swiper>
 				</div>
 			</section>
-			<section className="">
+			<section className="mt-[4rem]">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
-				<ContactForm />	
+					<div className="mb-[2rem]">
+						<h2 className={`${font.className}`}>{otherTranslate("contactHeading")}</h2>
+						<p className="text-[1.12rem]">{otherTranslate("contactSubHeading")} </p>
+					</div>
+					<ContactForm />
 				</div>
 			</section>
+			{/* {translate("testimonialSubtitle")} */}
 		</>
 	);
 }
 
 export async function getStaticProps({ locale, defaultLocale }) {
-	// console.log(locale);
 	return {
 		props: {
 			...(await serverSideTranslations(locale ?? defaultLocale, ["common", "home", "header", "footer"])),
