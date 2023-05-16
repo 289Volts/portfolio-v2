@@ -1,3 +1,5 @@
+import { Email } from "emailTemplate/Email";
+import { render } from "@react-email/render";
 import nodemailer from "nodemailer";
 
 const email = process.env.EMAIL_USER;
@@ -6,12 +8,14 @@ export const transporter = nodemailer.createTransport({
 	service: "gmail",
 	auth: {
 		user: email,
-		pass,   
+		pass,
 	},
 });
 
+const emailHtml = render(<Email />);
 
 export const mailOptions = {
-    from: email,
-    to: email,
-}
+	from: email,
+	to: email,
+	html: emailHtml,
+};

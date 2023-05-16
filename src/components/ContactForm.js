@@ -28,9 +28,16 @@ const ContactForm = () => {
 		formState: { errors },
 	} = useForm({ mode: "onBlur", resolver: yupResolver(schema) });
 
-	const onSubmit = (data) => {
-		sendForm(data);
-		reset();
+	const onSubmit = async (data) => {
+		try {
+			setIsLoading(true);
+			await sendForm(data);
+			reset();
+			setIsSuccess(true);
+			setIsLoading(false);
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	return (
