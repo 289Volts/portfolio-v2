@@ -21,22 +21,6 @@ h2 {
 a {
 	@apply font-medium text-sm;
 }
-.nav-link:active {
-	animation: glow 0.5s ease-in-out;
-	transition: animation 0.5s ease-in-out;
-}
-
-@keyframes glow {
-	0% {
-		text-shadow: 0 0 0px white;
-	}
-	50% {
-		text-shadow: 0 0 20px red;
-	}
-	100% {
-		text-shadow: 0 0 0px #fff;
-	}
-}
 
 .swiper {
 	width: 100%;
@@ -53,6 +37,10 @@ a {
 	@apply text-black rounded-lg;
 }
 
+.swiper-pagination-bullet {
+	@apply dark:bg-white !important;
+}
+
 .swiper-pagination-bullet-active {
 	@apply bg-black dark:bg-primary !important;
 }
@@ -62,7 +50,7 @@ a {
 }
 
 .form-control label {
-	@apply font-medium dark:text-white;
+	@apply font-medium dark:text-white after:content-['*'] after:ml-0.5 after:text-red-500;
 }
 
 .form-control input,

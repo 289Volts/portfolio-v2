@@ -28,16 +28,19 @@ const ContactForm = () => {
 		formState: { errors },
 	} = useForm({ mode: "onBlur", resolver: yupResolver(schema) });
 
-	const onSubmit = async (data) => {
-		try {
-			setIsLoading(true);
-			await sendForm(data);
-			reset();
-			setIsSuccess(true);
-			setIsLoading(false);
-		} catch (error) {
-			console.log(error);
-		}
+	const onSubmit = (data) => {
+		console.log(data);
+		console.log("data");
+		reset();
+		//     try {
+		// 		setIsLoading(true);
+		// 		 await sendForm(data);
+		//
+		// 		setIsSuccess(true);
+		// 		setIsLoading(false);
+		// 	} catch (error) {
+		// 		console.log(error);
+		// 	}
 	};
 
 	return (
@@ -56,13 +59,6 @@ const ContactForm = () => {
 					</label>
 					<input {...register("email")} className="" />
 					<span className="error-msg">{errors.email?.message}</span>
-				</div>
-				<div className="form-control">
-					<label htmlFor="phone" className="">
-						Phone
-					</label>
-					<input {...register("phone")} type="tel" className="" />
-					<span className="error-msg">{errors.phone?.message}</span>
 				</div>
 				<div className="form-control">
 					<label htmlFor="subject" className="">

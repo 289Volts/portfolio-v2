@@ -17,5 +17,5 @@
 	"testimonialHeading": "Vous ne pouvez pas me croire sur parole?",
 	"testimonialSubtitle": "Voici ce que mes clients disent de moi",
 	"aboutHeading": "Une petite introduction sur moi",
-	"aboutSubtitle": "Je m'appelle Roland, un développeur frontend qui aide les entreprises à maximiser leurs profits grâce à la fidélisation de la clientèle en développant des sites Web et des applications Web accessibles, bien optimisés et performants qui répondront aux besoins de votre entreprise. J'ai de l'expérience avec un large éventail de technologies et de frameworks tels que React, Node, Express, MongoDB, NextJs, Javascript, TailwindCss, Git."
+	"aboutCopy": "Je m'appelle Roland, un développeur frontend qui aide les entreprises à maximiser leurs profits grâce à la fidélisation de la clientèle en développant des sites Web et des applications Web accessibles, bien optimisés et performants qui répondront aux besoins de votre entreprise. J'ai de l'expérience avec un large éventail de technologies et de frameworks tels que React, Node, Express, MongoDB, NextJs, Javascript, TailwindCss, Git."
 }
