@@ -13,7 +13,6 @@ import Link from "next/link";
 import { t } from "i18next";
 import { useTheme } from "next-themes";
 import TestimonialCard from "@/components/homepage/TestimonialCard";
-const font = Inter({ subsets: ["latin"] });
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -27,6 +26,7 @@ import tailwindcssImg from "../../public/assets/images/skills/tailwindcss.webp";
 import framerImg from "../../public/assets/images/skills/framer.webp";
 import firebaseImg from "../../public/assets/images/skills/firebase.webp";
 import mongodbImg from "../../public/assets/images/skills/mongodb.webp";
+const font = Inter({ subsets: ["latin"] });
 
 export default function Home() {
 	const { t: translate } = useTranslation("home");
@@ -123,13 +123,13 @@ export default function Home() {
 					</div>
 					<div className="flex flex-col md:flex-row items-center gap-4 font-bold uppercase">
 						<Link
-							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
+							className="w-full font-medium md:w-[25%] lg:w-[20%] text-center transition duration-[350ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[15px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white "
 							href="/#contact"
 						>
 							{otherTranslate("cta")}
 						</Link>
 						<Link
-							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
+							className="w-full font-medium md:w-[23%] lg:w-[20%] text-center transition duration-[350ms] border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primary px-4 py-[14px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
 							href="/#value"
 						>
 							{translate("heroCta2")}
@@ -242,8 +242,14 @@ export default function Home() {
 
 						<div className="flex flex-wrap justify-between gap-2 gap-y-[1.5rem]">
 							{skills.map(({ name, img }, index) => (
-								<div key={index} className="flex flex-col items-center gap-[7px] w-[48%] lg:w-[25%]">
-									<Image src={img} alt={name} width={90} height={60} className="rounded-full p-3 bg-white" />
+								<div key={index} className="flex flex-col items-center gap-[6px] w-[48%] lg:w-[25%]">
+									<Image
+										src={img}
+										alt={name}
+										width={90}
+										height={60}
+										className="rounded-[1rem] p-3 outline-2 outline outline-black dark:outline-transparent bg-white"
+									/>
 									<p className="font-semibold">{name}</p>
 								</div>
 							))}
