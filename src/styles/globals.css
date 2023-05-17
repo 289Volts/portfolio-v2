@@ -22,6 +22,10 @@ a {
 	@apply font-medium text-sm;
 }
 
+#__next {
+	@apply overflow-x-hidden;
+}
+
 .swiper {
 	width: 100%;
 	height: 100%;
