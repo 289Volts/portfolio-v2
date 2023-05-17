@@ -4,14 +4,7 @@
 
 html {
 	scroll-behavior: smooth;
-	scroll-snap-type: y mandatory;
 }
-
-section {
-	scroll-snap-align: start;
-	scroll-margin-block: 70px;
-}
-
 
 body {
 	@apply bg-white dark:bg-base dark:text-text text-black duration-100;
