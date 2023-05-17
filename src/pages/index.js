@@ -4,7 +4,6 @@ import Image from "next/image";
 import TinyCollapse from "react-tiny-collapse";
 import chevron from "../../public/assets/icons/chevron.svg";
 import blackChevron from "../../public/assets/icons/blackChev.svg";
-import success from "../../successful.json";
 import { gsap } from "gsap";
 import React, { useRef, useEffect, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -22,6 +21,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import ContactForm from "@/components/ContactForm";
+import nextImg from "../../public/assets/images/skills/next.webp";
+import nodejsImg from "../../public/assets/images/skills/nodejs.webp";
+import tailwindcssImg from "../../public/assets/images/skills/tailwindcss.webp";
+import framerImg from "../../public/assets/images/skills/framer.webp";
+import firebaseImg from "../../public/assets/images/skills/firebase.webp";
+import mongodbImg from "../../public/assets/images/skills/mongodb.webp";
 
 export default function Home() {
 	const { t: translate } = useTranslation("home");
@@ -72,6 +77,34 @@ export default function Home() {
 		},
 	];
 
+	const skills = [
+		{
+			name: "Next.js",
+			img: nextImg,
+		},
+		{
+			name: "Tailwind CSS",
+			img: tailwindcssImg,
+		},
+		{
+			name: "Node.js",
+			img: nodejsImg,
+		},
+
+		{
+			name: "Framer Motion",
+			img: framerImg,
+		},
+		{
+			name: "Firebase",
+			img: firebaseImg,
+		},
+		{
+			name: "MongoDB",
+			img: mongodbImg,
+		},
+	];
+
 	return (
 		<>
 			<Head>
@@ -93,7 +126,7 @@ export default function Home() {
 							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 							href="/#contact"
 						>
-							{translate("heroCta1")}
+							{otherTranslate("cta")}
 						</Link>
 						<Link
 							className="w-full md:w-fit text-center transition duration-[400ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
@@ -120,7 +153,7 @@ export default function Home() {
 									className="text-center uppercase transition duration-[400ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-3 rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 									href="/#contact"
 								>
-									{translate("valuePropositionCta")}
+									{otherTranslate("cta")}
 								</Link>
 							</div>
 						</div>
@@ -192,9 +225,35 @@ export default function Home() {
 					</Swiper>
 				</div>
 			</section>
-			<section className="mt-[4rem]">
+			<section className="">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
-					<div className="mb-[2rem]">
+					<div className="mb-[1.5rem]">
+						<h2 className={`${font.className} mb-2`}>{translate("aboutHeading")}</h2>
+						<p className="text-[1.12rem]">{translate("aboutCopy")} </p>
+						<Link
+							className="text-center uppercase transition duration-[400ms] block w-fit mt-4 dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-3 rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
+							href="/#contact"
+						>
+							{otherTranslate("cta")}
+						</Link>
+					</div>
+					<div className="mt-[3rem]">
+						<h2 className={`${font.className} mb-4`}>{translate("skills")}</h2>
+
+						<div className="flex flex-wrap justify-between gap-2 gap-y-[1.5rem]">
+							{skills.map(({ name, img }, index) => (
+								<div key={index} className="flex flex-col items-center gap-[7px] w-[48%] lg:w-[25%]">
+									<Image src={img} alt={name} width={90} height={60} className="rounded-full p-3 bg-white" />
+									<p className="font-semibold">{name}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</section>
+			<section className="mt-[4.5rem]">
+				<div className="w-[90%] lg:w-[80%] mx-auto">
+					<div className="mb-[1.5rem]">
 						<h2 className={`${font.className}`}>{otherTranslate("contactHeading")}</h2>
 						<p className="text-[1.12rem]">{otherTranslate("contactSubHeading")} </p>
 					</div>
