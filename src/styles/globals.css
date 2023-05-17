@@ -4,7 +4,14 @@
 
 html {
 	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
 }
+
+section {
+	scroll-snap-align: start;
+	scroll-margin-top: 70px;
+}
+
 
 body {
 	@apply bg-white dark:bg-base dark:text-text text-black duration-100;
@@ -20,10 +27,6 @@ h2 {
 
 a {
 	@apply font-medium text-sm;
-}
-
-#__next {
-	@apply overflow-x-hidden;
 }
 
 .swiper {

@@ -133,7 +133,7 @@ const Header = ({ satoshi, font }) => {
 				{/* Nav Menu */}
 				<div
 					className={`absolute z-[100] inset-0 h-[100dvh] transition duration-[400ms] bg-[#FFFEFE] dark:bg-secondary p-5 pl-6  ${
-						!isMenuOpen ? "translate-x-[100%] " : "translate-x-0 "
+						!isMenuOpen ? "translate-x-[-100%] " : "translate-x-0 "
 					} flex flex-col`}
 				>
 					<div className="flex justify-between items-center">
