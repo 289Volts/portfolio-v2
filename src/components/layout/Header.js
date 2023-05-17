@@ -152,14 +152,14 @@ const Header = ({ satoshi, font }) => {
 					<div className="flex flex-col h-full justify-between">
 						<div className="nav-top-section">
 							<nav className="mt-[3.5rem]">
-								<ul className="flex flex-col gap-2">
+								<ul className="flex flex-col gap-5">
 									{navLinks.map((link) => (
 										<li className="" key={link.name}>
 											<Link
 												onClick={hide}
 												href={link.path}
 												locale={router.locale}
-												className="nav-link text-[1.4rem] uppercase font-medium"
+												className="nav-link text-[1.7rem] uppercase font-medium"
 											>
 												{translate(link.name)}
 											</Link>
@@ -170,7 +170,7 @@ const Header = ({ satoshi, font }) => {
 							<Link
 								href=""
 								locale={router.locale}
-								className="block mt-4 px-[16px] py-2 bg-black text-white dark:bg-white dark:text-black font-medium w-fit rounded-[5px] text-[1.2rem]"
+								className="block mt-4 px-[16px] py-[14px] bg-black text-white dark:bg-white dark:text-black font-medium w-fit rounded-[5px] text-[1.5rem]"
 							>
 								{translate("resume")}
 							</Link>
