@@ -138,7 +138,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section id="value" className="h-[75dvh">
+			<section id="value" className="">
 				<div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-[2rem]">
 					<div className="">
 						<h2 className={`${font.className}`}>{translate("valuePropositionHeading")}</h2>
@@ -257,7 +257,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="mt-[4.5rem]">
+			<section id="contact" className="mt-[4.5rem]">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<div className="mb-[1.5rem]">
 						<h2 className={`${font.className}`}>{otherTranslate("contactHeading")}</h2>
