@@ -70,12 +70,12 @@ const Header = ({ satoshi, font }) => {
 
 	const showNav = () => {
 		setIsMenuOpen(true);
+		document.body.classList.add("fixedBody");
 	};
 	const hide = () => {
 		setIsMenuOpen(false);
+		document.body.classList.remove("fixedBody");
 	};
-
-	// console.log(pathname);
 
 	const options = [
 		{

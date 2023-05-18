@@ -10,7 +10,7 @@ const schema = yup
 		email: yup
 			.string()
 			.email()
-			.matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "Invalid email")
+			.matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "Please leave an email i can reply to")
 			.required(),
 		phone: yup.string().required(),
 		subject: yup.string().required(),
@@ -51,21 +51,21 @@ const ContactForm = () => {
 						Name
 					</label>
 					<input {...register("name")} className="" />
-					<span className="error-msg">{errors.name?.message}</span>
+					<span className="error-msg">{errors.name && "Please leave a name"}</span>
 				</div>
 				<div className="form-control">
 					<label htmlFor="email" className="">
 						Email
 					</label>
 					<input {...register("email")} className="" />
-					<span className="error-msg">{errors.email?.message}</span>
+					<span className="error-msg normal-case">{errors.email?.message.replace("email", "Email")}</span>
 				</div>
 				<div className="form-control">
 					<label htmlFor="subject" className="">
 						Subject
 					</label>
 					<input {...register("subject")} className="" />
-					<span className="error-msg">{errors.subject?.message}</span>
+					<span className="error-msg">{errors.subject && "Your message need a subject"}</span>
 				</div>
 
 				<div className="form-control">
@@ -73,7 +73,7 @@ const ContactForm = () => {
 						Message
 					</label>
 					<textarea {...register("message")} rows="7" className="resize-none w-full" />
-					<span className="error-msg">{errors.message?.message}</span>
+					<span className="error-msg">{errors.message && "Please leave a message"}</span>
 				</div>
 				<div className="">
 					<button type="submit" className="px-6 py-2 rounded-md bg-red-500 dark:bg-primary font-medium text-white ">
