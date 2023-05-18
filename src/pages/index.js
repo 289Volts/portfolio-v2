@@ -32,7 +32,7 @@ export default function Home() {
 	const { t: translate } = useTranslation("home");
 	const { t: otherTranslate } = useTranslation("common");
 	const [isOpen, setIsOpen] = useState([]);
-	const { theme, setTheme } = useTheme();
+	const { theme} = useTheme();
 	// const { locale, locales } = useRouter();
 	// const elementRef = useRef(null);
 
@@ -169,7 +169,7 @@ export default function Home() {
 									className="bg-text dark:bg-[#222] p-5 py-4 rounded-[1rem] cursor-pointer"
 								>
 									<div className="flex justify-between gap-[3rem]">
-										<h3 className="font-semibold text-[1.25rem]">{translate(heading)}</h3>
+										<h3 className="font-semibold text-[1.125rem]">{translate(heading)}</h3>
 										<Image
 											src={theme !== "light" ? chevron : blackChevron}
 											alt="chevron"
@@ -196,10 +196,10 @@ export default function Home() {
 						<p className="">{translate("testimonialSubtitle")}</p>
 					</div>
 					<Swiper
-						autoplay={{
-							delay: 3000,
-							disableOnInteraction: false,
-						}}
+						// autoplay={{
+						// 	delay: 3000,
+						// 	disableOnInteraction: false,
+						// }}
 						spaceBetween={50}
 						centeredSlides={true}
 						pagination={{ clickable: true }}
@@ -208,19 +208,19 @@ export default function Home() {
 						className="mySwiper px-8"
 					>
 						<SwiperSlide>
-							<TestimonialCard />
+							<TestimonialCard theme={theme} />
 						</SwiperSlide>
 						<SwiperSlide>
-							<TestimonialCard />
+							<TestimonialCard theme={theme} />
 						</SwiperSlide>
 						<SwiperSlide>
-							<TestimonialCard />
+							<TestimonialCard theme={theme} />
 						</SwiperSlide>
 						<SwiperSlide>
-							<TestimonialCard />
+							<TestimonialCard theme={theme} />
 						</SwiperSlide>
 						<SwiperSlide>
-							<TestimonialCard />
+							<TestimonialCard theme={theme} />
 						</SwiperSlide>
 					</Swiper>
 				</div>
@@ -237,7 +237,7 @@ export default function Home() {
 							{otherTranslate("cta")}
 						</Link>
 					</div>
-					<div className="mt-[3rem]">
+					<div className="mt-[2rem]">
 						<h2 className={`${font.className} mb-4`}>{translate("skills")}</h2>
 
 						<div className="flex flex-wrap justify-between gap-2 gap-y-[1.5rem]">
@@ -248,7 +248,7 @@ export default function Home() {
 										alt={name}
 										width={90}
 										height={60}
-										className="rounded-[1rem] p-3 outline-2 outline outline-black dark:outline-transparent bg-white"
+										className="rounded-[1rem] p-3 outline-2 outline outline-black/40 dark:outline-transparent bg-white"
 									/>
 									<p className="font-semibold">{name}</p>
 								</div>
@@ -257,7 +257,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section id="contact" className="mt-[4.5rem]">
+			<section id="contact" className="mt-[4rem]">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<div className="mb-[1.5rem]">
 						<h2 className={`${font.className}`}>{otherTranslate("contactHeading")}</h2>
