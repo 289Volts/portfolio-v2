@@ -248,7 +248,7 @@ export default function Home() {
 										alt={name}
 										width={90}
 										height={60}
-										className="rounded-[1rem] p-3 outline-2 outline outline-black dark:outline-transparent bg-white"
+										className="rounded-[1rem] p-3 outline-2 outline outline-black/40 dark:outline-transparent bg-white"
 									/>
 									<p className="font-semibold">{name}</p>
 								</div>

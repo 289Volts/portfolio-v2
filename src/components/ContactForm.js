@@ -45,7 +45,7 @@ const ContactForm = () => {
 
 	return (
 		<div>
-			<form action="" className="flex flex-col gap-4 rounded-md" onSubmit={handleSubmit(onSubmit)}>
+			<form action="" className="flex flex-col gap-3 rounded-md" onSubmit={handleSubmit(onSubmit)}>
 				<div className="form-control">
 					<label htmlFor="name" className="">
 						Name
