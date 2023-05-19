@@ -70,11 +70,11 @@ const Header = ({ satoshi, font }) => {
 
 	const showNav = () => {
 		setIsMenuOpen(true);
-		document.body.classList.add("fixedBody");
+		// document.body.classList.add("fixedBody");
 	};
 	const hide = () => {
 		setIsMenuOpen(false);
-		document.body.classList.remove("fixedBody");
+		// document.body.classList.remove("fixedBody");
 	};
 
 	const options = [
@@ -152,14 +152,14 @@ const Header = ({ satoshi, font }) => {
 					<div className="flex flex-col h-full justify-between">
 						<div className="nav-top-section">
 							<nav className="mt-[3.5rem]">
-								<ul className="flex flex-col gap-5">
+								<ul className="flex flex-col gap-6">
 									{navLinks.map((link) => (
 										<li className="" key={link.name}>
 											<Link
 												onClick={hide}
 												href={link.path}
 												locale={router.locale}
-												className="nav-link text-[1.7rem] uppercase font-medium"
+												className="nav-link text-[1.9rem] uppercase font-medium"
 											>
 												{translate(link.name)}
 											</Link>
@@ -170,7 +170,7 @@ const Header = ({ satoshi, font }) => {
 							<Link
 								href=""
 								locale={router.locale}
-								className="block mt-4 px-[16px] py-[14px] bg-black text-white dark:bg-white dark:text-black font-medium w-fit rounded-[5px] text-[1.5rem]"
+								className="block mt-6 px-[16px] py-[14px] bg-black text-white dark:bg-white dark:text-black font-medium w-fit rounded-[5px] text-[1.5rem]"
 							>
 								{translate("resume")}
 							</Link>
@@ -222,7 +222,7 @@ const Header = ({ satoshi, font }) => {
 				</div>
 			</div>
 			<div className="desktop-wrapper bg-white/[0.1] backdrop-blur-[8px] hidden md:block">
-				<div className="w-[90%] lg:w-[80%] mx-auto py-4 flex items-center justify-between transition duration-300">
+				<div className="w-[90%] lg:w-[80%] mx-auto py-3 flex items-center justify-between transition duration-300">
 					<Link href="/" locale={router.locale} className="text-[1.5rem] font-medium">
 						289Volt<span className="text-sm">⚡</span>
 					</Link>

@@ -32,9 +32,16 @@ export default function Home() {
 	const { t: translate } = useTranslation("home");
 	const { t: otherTranslate } = useTranslation("common");
 	const [isOpen, setIsOpen] = useState([]);
-	const { theme} = useTheme();
+	const { theme } = useTheme();
+	const [isThemeLight, setIsThemeLight] = useState(theme === "light" ? true : false);
 	// const { locale, locales } = useRouter();
-	// const elementRef = useRef(null);
+	const valueRef = useRef(null);
+	const contactRef = useRef(null);
+	// const valueRef = useRef(null);
+
+	useEffect(() => {
+		setIsThemeLight(theme === "light" ? true : false);
+	}, [theme])
 
 	// useEffect(() => {
 	// 	const element = elementRef.current;
@@ -56,6 +63,13 @@ export default function Home() {
 	// 	// 		}
 	// 	// 	);
 	// }, []);
+
+	const handleScroll = (ref) => {
+		window.scrollTo({
+			top: ref.current.offsetTop - 72,
+			behavior: "smooth",
+		});
+	};
 
 	const openAccordion = (index) => {
 		const isOpened = isOpen.includes(index);
@@ -113,7 +127,7 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<section className="h-[100dvh] flex flex-col justify-center md:h-screen">
+			<section className="pt-[7rem] mb-[4rem] flex flex-col justify-center md:h-screen">
 				<div className="w-[90%] lg:w-[80%] mx-auto space-y-[2.2rem]">
 					<div className="space-y-2">
 						<h1 className={`${font.className} capitalize text-[2.2rem] font-extrabold leading-[1.25]`}>
@@ -122,23 +136,27 @@ export default function Home() {
 						<p className="font-medium text-[1.2rem] leading-[1.5]">{translate("heroSubtitle")}</p>
 					</div>
 					<div className="flex flex-col md:flex-row items-center gap-4 font-bold uppercase">
-						<Link
+						<button
+							aria-label="navigation-button"
+							onClick={() => handleScroll(contactRef)}
 							className="w-full font-medium md:w-[25%] lg:w-[20%] text-center transition duration-[350ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[15px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white "
-							href="/#contact"
+							// href="/#contact"
 						>
 							{otherTranslate("cta")}
-						</Link>
-						<Link
+						</button>
+						<button
+							aria-label="navigation-button"
+							onClick={() => handleScroll(valueRef)}
 							className="w-full font-medium md:w-[23%] lg:w-[20%] text-center transition duration-[350ms] border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primary px-4 py-[14px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
-							href="/#value"
+							// href="/#value"
 						>
 							{translate("heroCta2")}
-						</Link>
+						</button>
 					</div>
 				</div>
 			</section>
 
-			<section id="value" className="">
+			<section id="value" className="" ref={valueRef}>
 				<div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-[2rem]">
 					<div className="">
 						<h2 className={`${font.className}`}>{translate("valuePropositionHeading")}</h2>
@@ -208,19 +226,19 @@ export default function Home() {
 						className="mySwiper px-8"
 					>
 						<SwiperSlide>
-							<TestimonialCard theme={theme} />
+							<TestimonialCard theme={theme} currentTheme={isThemeLight} />
 						</SwiperSlide>
 						<SwiperSlide>
-							<TestimonialCard theme={theme} />
+							<TestimonialCard theme={theme} currentTheme={isThemeLight} />
 						</SwiperSlide>
 						<SwiperSlide>
-							<TestimonialCard theme={theme} />
+							<TestimonialCard theme={theme} currentTheme={isThemeLight} />
 						</SwiperSlide>
 						<SwiperSlide>
-							<TestimonialCard theme={theme} />
+							<TestimonialCard theme={theme} currentTheme={isThemeLight} />
 						</SwiperSlide>
 						<SwiperSlide>
-							<TestimonialCard theme={theme} />
+							<TestimonialCard theme={theme} currentTheme={isThemeLight} />
 						</SwiperSlide>
 					</Swiper>
 				</div>
@@ -231,7 +249,7 @@ export default function Home() {
 						<h2 className={`${font.className} mb-2`}>{translate("aboutHeading")}</h2>
 						<p className="text-[1.12rem]">{translate("aboutCopy")} </p>
 						<Link
-							className="text-center uppercase transition duration-[400ms] block w-fit mt-4 dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-3 rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
+							className="text-center uppercase transition duration-[400ms] block w-fit mt-3 dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-3 rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 							href="/#contact"
 						>
 							{otherTranslate("cta")}
@@ -257,7 +275,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section id="contact" className="mt-[4rem]">
+			<section id="contact" className="mt-[4rem]" ref={contactRef}>
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<div className="mb-[1.5rem]">
 						<h2 className={`${font.className}`}>{otherTranslate("contactHeading")}</h2>

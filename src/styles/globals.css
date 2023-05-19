@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-	scroll-behavior: smooth;
+html[class="light"] .card {
+	background: rgba(255, 255, 255, 0.33);
+	border-radius: 16px;
+	box-shadow: 0 4px 17px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5.1px);
+	-webkit-backdrop-filter: blur(5.1px);
 }
 
 body {
