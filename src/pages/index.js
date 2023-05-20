@@ -8,7 +8,7 @@ import { gsap } from "gsap";
 import React, { useRef, useEffect, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
+
 import Link from "next/link";
 import { t } from "i18next";
 import { useTheme } from "next-themes";
@@ -41,7 +41,7 @@ export default function Home() {
 
 	useEffect(() => {
 		setIsThemeLight(theme === "light" ? true : false);
-	}, [theme])
+	}, [theme]);
 
 	// useEffect(() => {
 	// 	const element = elementRef.current;
@@ -127,7 +127,7 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<section className="pt-[7rem] mb-[4rem] flex flex-col justify-center md:h-screen">
+			<section className="pt-[7rem] mb-[4rem] flex flex-col justify-center md:p-0 md:h-screen md:text-center">
 				<div className="w-[90%] lg:w-[80%] mx-auto space-y-[2.2rem]">
 					<div className="space-y-2">
 						<h1 className={`${font.className} capitalize text-[2.2rem] font-extrabold leading-[1.25]`}>
@@ -135,20 +135,18 @@ export default function Home() {
 						</h1>
 						<p className="font-medium text-[1.2rem] leading-[1.5]">{translate("heroSubtitle")}</p>
 					</div>
-					<div className="flex flex-col md:flex-row items-center gap-4 font-bold uppercase">
+					<div className="flex flex-col md:flex-row md:justify-center items-center gap-4 font-bold uppercase">
 						<button
 							aria-label="navigation-button"
 							onClick={() => handleScroll(contactRef)}
-							className="w-full font-medium md:w-[25%] lg:w-[20%] text-center transition duration-[350ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[15px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white "
-							// href="/#contact"
+							className="w-full font-medium md:w-[25%] lg:w-[20%] text-center transition duration-[350ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 						>
 							{otherTranslate("cta")}
 						</button>
 						<button
 							aria-label="navigation-button"
 							onClick={() => handleScroll(valueRef)}
-							className="w-full font-medium md:w-[23%] lg:w-[20%] text-center transition duration-[350ms] border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primary px-4 py-[14px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
-							// href="/#value"
+							className="w-full font-medium md:w-[24%] lg:w-[20%] text-center transition duration-[350ms] border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primary px-4 py-[14px] md:py-[12.5px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
 						>
 							{translate("heroCta2")}
 						</button>
@@ -157,8 +155,8 @@ export default function Home() {
 			</section>
 
 			<section id="value" className="" ref={valueRef}>
-				<div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-[2rem]">
-					<div className="">
+				<div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-[2rem] lg:flex-row md:justify-between">
+					<div className="lg:w-[53%]">
 						<h2 className={`${font.className}`}>{translate("valuePropositionHeading")}</h2>
 						<div className="mt-2">
 							<div className="space-y-3">
@@ -177,7 +175,7 @@ export default function Home() {
 						</div>
 					</div>
 
-					<div className="">
+					<div className="lg:w-[45%]">
 						<h2 className={`${font.className}`}>{translate("benefitsHeading")}</h2>
 						<div className="space-y-3 mt-2">
 							{accordionContent.map(({ heading, subtitle }, index) => (
