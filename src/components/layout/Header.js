@@ -149,9 +149,9 @@ const Header = ({ satoshi, font }) => {
 				{/* Nav Menu */}
 				<div
 					id="nav-menu"
-					className={`absolute z-[100] inset-0 h-[100svh] transition duration-[400ms] p-5 pl-6  ${
+					className={`absolute z-[100] inset-0 h-[100vh] transition duration-[400ms] p-5 pl-6  ${
 						!isMenuOpen ? "translate-x-[-100%] " : "translate-x-0 "
-					} flex flex-col`}
+					} grid grid-rows-[auto_1fr]`}
 				>
 					<div className="flex justify-between items-center">
 						<Link onClick={hide} href="/" locale={router.locale} className="text-[1.5rem] font-medium">
@@ -166,7 +166,7 @@ const Header = ({ satoshi, font }) => {
 							<Image src={close} alt="close" />
 						</button>
 					</div>
-					<div className="flex flex-col h-full justify-between">
+					<div className="flex flex-col h-ful justify-between">
 						<div className="nav-top-section">
 							<nav className="mt-[3.5rem]">
 								<ul className="flex flex-col gap-6">
