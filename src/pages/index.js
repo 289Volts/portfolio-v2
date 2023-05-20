@@ -136,7 +136,7 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<section className="pt-[7rem] mb-[4rem] flex flex-col">
+			<section className="pt-[7rem] mb-[4rem] flex flex-col lg:h-[60vh]">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<div className="md:w-[75%] space-y-[2.2rem]">
 						<div className="space-y-2">
@@ -149,14 +149,14 @@ export default function Home() {
 							<button
 								aria-label="navigation-button"
 								onClick={() => handleScroll(contactRef)}
-								className="w-full font-medium md:w-fit lg:w-[20%] text-center transition duration-[350ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 md:px-6 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
+								className="w-full font-medium md:w-fit text-center transition duration-[350ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 md:px-6 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 							>
 								{otherTranslate("cta")}
 							</button>
 							<button
 								aria-label="navigation-button"
 								onClick={() => handleScroll(valueRef)}
-								className="w-full font-medium md:w-fit lg:w-[20%] text-center transition duration-[350ms] border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primary px-4 md:px-6 py-[14px] md:py-[12.5px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
+								className="w-full font-medium md:w-fit text-center transition duration-[350ms] border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primary px-4 md:px-6 py-[14px] md:py-[12.5px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
 							>
 								{translate("heroCta2")}
 							</button>
@@ -254,8 +254,8 @@ export default function Home() {
 				</div>
 			</section>
 			<section id="about" className="" ref={aboutRef}>
-				<div className="w-[90%] lg:w-[80%] mx-auto">
-					<div className="mb-[1.5rem]">
+				<div className="w-[90%] lg:w-[80%] mx-auto lg:flex justify-between gap-10">
+					<div className="mb-[1.5rem] lg:w-[50%] xl:w-[49%]">
 						<h2 className={`${font.className} mb-2`}>{translate("aboutHeading")}</h2>
 						<p className="text-[1.12rem]">{translate("aboutCopy")} </p>
 						<Link
@@ -265,12 +265,15 @@ export default function Home() {
 							{otherTranslate("cta")}
 						</Link>
 					</div>
-					<div className="mt-[2rem]">
+					<div className="mt-[2rem] lg:mt-0 lg:w-[45%]">
 						<h2 className={`${font.className} mb-4`}>{translate("skills")}</h2>
 
-						<div className="flex flex-wrap justify-between gap-2 gap-y-[1.5rem] md:gap-[2rem] lg:gap-4 md:flex-nowrap">
+						<div className="flex flex-wrap justify-between gap-2 gap-y-[1.5rem] md:gap-[2rem] lg:gap-4 md:flex-nowrap lg:flex-wrap">
 							{skills.map(({ name, img }, index) => (
-								<div key={index} className="flex flex-col items-center gap-[6px] w-[30%] md:w-[12%] lg:w-[15%] text-center">
+								<div
+									key={index}
+									className="flex flex-col items-center gap-[6px] w-[30%] md:w-[12%] lg:w-[25%] text-center"
+								>
 									<Image
 										src={img}
 										alt={name}
@@ -286,12 +289,14 @@ export default function Home() {
 				</div>
 			</section>
 			<section id="contact" className="mt-[4rem]" ref={contactRef}>
-				<div className="w-[90%] lg:w-[80%] mx-auto">
-					<div className="mb-[1.5rem]">
-						<h2 className={`${font.className}`}>{otherTranslate("contactHeading")}</h2>
-						<p className="text-[1.12rem]">{otherTranslate("contactSubHeading")} </p>
+				<div className="w-[90%] lg:w-[80%] xl:w-[70%] mx-auto">
+					<div className="md:flex gap-8 justify-between">
+						<div className="mb-[1.5rem] md:mt-9">
+							<h2 className={`${font.className} md:text-[3rem] xl:text-[4rem] leading-[1.2] font-black`}>{otherTranslate("contactHeading")}</h2>
+							<p className="text-[1.12rem] md:text-[1.3rem] lg:text-[1.5rem]">{otherTranslate("contactSubHeading")} </p>
+						</div>
+						<ContactForm />
 					</div>
-					<ContactForm />
 				</div>
 			</section>
 			{/* {translate("testimonialSubtitle")} */}
