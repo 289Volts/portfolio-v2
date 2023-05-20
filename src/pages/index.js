@@ -8,7 +8,7 @@ import { gsap } from "gsap";
 import React, { useRef, useEffect, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
+
 import Link from "next/link";
 import { t } from "i18next";
 import { useTheme } from "next-themes";

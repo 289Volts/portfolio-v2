@@ -2,13 +2,10 @@ import Image from "next/image";
 import Quote from "public/assets/icons/Quote";
 
 const TestimonialCard = ({ theme, personSrc, currentTheme }) => {
-	// console.log(currentTheme)
 	return (
 		<div
 			className={`card p-4 py-6 rounded-[1rem] relative flex flex-col gap-4 text-black dark:text-white bg-[#111111] border-[#333] border `}
 		>
-			<acronym title=""></acronym>
-
 			<div className="absolute top-[-32px] left-[8px]">
 				<Quote fill={currentTheme ? "#111111" : "#fff"} />
 			</div>

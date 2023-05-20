@@ -16,6 +16,6 @@
 	"testimonialHeading": "Can't take my word for it?",
 	"testimonialSubtitle": "Here's what my clients have to say about me",
 	"aboutHeading": "A little intro about me",
-	"aboutCopy": "My name is Roland, a frontend developer that helps businesses maximize profit through customer retention by developing accessible, well optimized and performant websites and web applications that will solve your business needs. I have experience working with a wide range of technologies and frameworks such as React, Node, Express, MongoDB, NextJs, Javascript, TailwindCss, Git.",
+	"aboutCopy": "My name is Roland, a frontend developer that helps businesses maximize profit through customer retention by developing accessible, well optimized and performant websites and web applications that will solve your business needs. I have experience working with a wide range of technologies and frameworks such as React, NodeJs, Firebase, MongoDB, NextJs, Javascript, TailwindCss, Git.",
 	"skills": "My Toolkit"
 }
