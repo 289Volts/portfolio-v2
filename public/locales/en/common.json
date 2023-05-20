@@ -1,10 +1,9 @@
 {
 	"cta": "Work with me",
-	"contactHeading": "Contact Me",
+	"contactHeading": "Let's work together",
 	"contactSubHeading": "Have a question or want us to work together?",
 	"contactName": "Name",
 	"contactEmail": "Email",
-	"contactPhone": "Phone",
 	"contactSubject": "Subject",
 	"contactMessage": "Message",
 	"contactSend": "Send",
@@ -12,7 +11,6 @@
 	"contactError": "Something went wrong. Please try again.",
 	"contactNameError": "Please enter your name.",
 	"contactEmailError": "Please enter a valid email address.",
-	"contactPhoneError": "Please enter a valid phone number.",
 	"contactSubjectError": "Please enter the subject of your message.",
 	"contactMessageError": "Please enter a message.",
 	"contactInvalidEmailError": "Please enter a valid email address."
