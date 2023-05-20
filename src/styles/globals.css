@@ -15,7 +15,11 @@ body {
 }
 
 .fixedBody {
-	@apply fixed inset-0 w-full;
+	@apply fixed left-0 right-0 w-full;
+}
+
+#nav-menu {
+	@apply bg-[#FFFEFE] dark:bg-secondary;
 }
 
 h2 {
