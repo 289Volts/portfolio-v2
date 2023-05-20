@@ -35,11 +35,10 @@ export default function Home() {
 	const { theme } = useTheme();
 	const [isThemeLight, setIsThemeLight] = useState(theme === "light" ? true : false);
 	const [screenWidth, setScreenWidth] = useState(1);
-	// const { locale, locales } = useRouter();
 	const valueRef = useRef(null);
 	const contactRef = useRef(null);
 	const aboutRef = useRef(null);
-	const projectsRef = useRef(null);
+
 
 	useEffect(() => {
 		setIsThemeLight(theme === "light" ? true : false);
@@ -136,6 +135,7 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+
 			<section className="pt-[7rem] mb-[4rem] flex flex-col lg:h-[60vh]">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<div className="md:w-[75%] space-y-[2.2rem]">
@@ -169,7 +169,7 @@ export default function Home() {
 				<div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-[2rem] lg:flex-row md:justify-between">
 					<div className="lg:w-[53%]">
 						<h2 className={`${font.className}`}>{translate("valuePropositionHeading")}</h2>
-						<div className="mt-2">
+						<div className="mt-2 text-[1.17rem]">
 							<div className="space-y-3">
 								<p className="">{translate("valuePropositionSubtitle1")}</p>
 								<p className="">{translate("valuePropositionSubtitle2")}</p>
@@ -220,7 +220,7 @@ export default function Home() {
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<div className="">
 						<h2 className={`${font.className}`}>{translate("testimonialHeading")}</h2>
-						<p className="">{translate("testimonialSubtitle")}</p>
+						<p className="text-[1.17rem]">{translate("testimonialSubtitle")}</p>
 					</div>
 					<Swiper
 						// autoplay={{
@@ -257,7 +257,7 @@ export default function Home() {
 				<div className="w-[90%] lg:w-[80%] mx-auto lg:flex justify-between gap-10">
 					<div className="mb-[1.5rem] lg:w-[50%] xl:w-[49%]">
 						<h2 className={`${font.className} mb-2`}>{translate("aboutHeading")}</h2>
-						<p className="text-[1.12rem]">{translate("aboutCopy")} </p>
+						<p className="text-[1.17rem]">{translate("aboutCopy")} </p>
 						<Link
 							className="text-center uppercase transition duration-[400ms] block w-fit mt-3 dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-3 rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 							href="/#contact"
@@ -295,7 +295,7 @@ export default function Home() {
 							<h2 className={`${font.className} md:text-[3rem] xl:text-[4rem] leading-[1.2] font-black`}>
 								{otherTranslate("contactHeading")}
 							</h2>
-							<p className="text-[1.12rem] md:text-[1.3rem] lg:text-[1.5rem]">{otherTranslate("contactSubHeading")} </p>
+							<p className="text-[1.17rem] md:text-[1.3rem] lg:text-[1.5rem]">{otherTranslate("contactSubHeading")} </p>
 						</div>
 						<ContactForm />
 					</div>

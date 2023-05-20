@@ -15,7 +15,7 @@ body {
 }
 
 .fixedBody {
-	@apply fixed left-0 right-0 w-full;
+	@apply fixed left-0 right-0 w-full overflow-auto;
 }
 
 #nav-menu {

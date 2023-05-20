@@ -4,6 +4,7 @@ import localFont from "@next/font/local";
 import "@/styles/globals.css";
 import { appWithTranslation } from "next-i18next";
 import { ThemeProvider } from "next-themes";
+import { HeaderProvider } from "context/Header";
 
 const alumni = Alumni_Sans({ subsets: ["latin"] });
 
@@ -25,11 +26,13 @@ const satoshi = localFont({
 });
 const App = ({ Component, pageProps }) => {
 	return (
-		<ThemeProvider attribute="class" themes={["light", "dark", "system"]}>
-			<Layout alumni={alumni.className} satoshi={satoshi.className}>
-				<Component {...pageProps} />
-			</Layout>
-		</ThemeProvider>
+		<HeaderProvider>
+			<ThemeProvider attribute="class" themes={["light", "dark", "system"]}>
+				<Layout alumni={alumni.className} satoshi={satoshi.className}>
+					<Component {...pageProps} />
+				</Layout>
+			</ThemeProvider>
+		</HeaderProvider>
 	);
 };
 export default appWithTranslation(App);
