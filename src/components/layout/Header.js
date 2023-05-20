@@ -132,7 +132,8 @@ const Header = ({ satoshi, font }) => {
 				</div>
 				{/* Nav Menu */}
 				<div
-					className={`absolute z-[100] inset-0 h-[100dvh] transition duration-[400ms] bg-red-500 p-5 pl-6  ${
+					id="nav-menu"
+					className={`absolute z-[100] inset-0 h-[100dvh] transition duration-[400ms] p-5 pl-6  ${
 						!isMenuOpen ? "translate-x-[-100%] " : "translate-x-0 "
 					} flex flex-col`}
 				>
