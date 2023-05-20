@@ -34,15 +34,24 @@ export default function Home() {
 	const [isOpen, setIsOpen] = useState([]);
 	const { theme } = useTheme();
 	const [isThemeLight, setIsThemeLight] = useState(theme === "light" ? true : false);
+	const [screenWidth, setScreenWidth] = useState(1);
 	// const { locale, locales } = useRouter();
 	const valueRef = useRef(null);
 	const contactRef = useRef(null);
-	// const valueRef = useRef(null);
+	const aboutRef = useRef(null);
+	const projectsRef = useRef(null);
 
 	useEffect(() => {
 		setIsThemeLight(theme === "light" ? true : false);
 	}, [theme]);
 
+	useEffect(() => {
+		if (window.innerWidth <= 768) {
+			setScreenWidth(2);
+		} else if (window.innerWidth >= 1300) {
+			setScreenWidth(3);
+		}
+	}, []);
 	// useEffect(() => {
 	// 	const element = elementRef.current;
 
@@ -127,29 +136,31 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<section className="pt-[7rem] mb-[4rem] flex flex-col justify-center md:p-0 md:h-screen md:text-center">
-				<div className="w-[90%] lg:w-[80%] mx-auto space-y-[2.2rem]">
-					<div className="space-y-2">
-						<h1 className={`${font.className} capitalize text-[2.2rem] font-extrabold leading-[1.25]`}>
-							{translate("heroHeading")}{" "}
-						</h1>
-						<p className="font-medium text-[1.2rem] leading-[1.5]">{translate("heroSubtitle")}</p>
-					</div>
-					<div className="flex flex-col md:flex-row md:justify-center items-center gap-4 font-bold uppercase">
-						<button
-							aria-label="navigation-button"
-							onClick={() => handleScroll(contactRef)}
-							className="w-full font-medium md:w-[25%] lg:w-[20%] text-center transition duration-[350ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
-						>
-							{otherTranslate("cta")}
-						</button>
-						<button
-							aria-label="navigation-button"
-							onClick={() => handleScroll(valueRef)}
-							className="w-full font-medium md:w-[24%] lg:w-[20%] text-center transition duration-[350ms] border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primary px-4 py-[14px] md:py-[12.5px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
-						>
-							{translate("heroCta2")}
-						</button>
+			<section className="pt-[7rem] mb-[4rem] flex flex-col">
+				<div className="w-[90%] lg:w-[80%] mx-auto">
+					<div className="md:w-[75%] space-y-[2.2rem]">
+						<div className="space-y-2">
+							<h1 className={`${font.className} capitalize text-[2.2rem] font-extrabold leading-[1.25]`}>
+								{translate("heroHeading")}{" "}
+							</h1>
+							<p className="font-medium text-[1.2rem] leading-[1.5]">{translate("heroSubtitle")}</p>
+						</div>
+						<div className="flex flex-col md:flex-row md:justify-cente items-center gap-4 font-bold uppercase">
+							<button
+								aria-label="navigation-button"
+								onClick={() => handleScroll(contactRef)}
+								className="w-full font-medium md:w-fit lg:w-[20%] text-center transition duration-[350ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 md:px-6 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
+							>
+								{otherTranslate("cta")}
+							</button>
+							<button
+								aria-label="navigation-button"
+								onClick={() => handleScroll(valueRef)}
+								className="w-full font-medium md:w-fit lg:w-[20%] text-center transition duration-[350ms] border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primary px-4 md:px-6 py-[14px] md:py-[12.5px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
+							>
+								{translate("heroCta2")}
+							</button>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -216,7 +227,8 @@ export default function Home() {
 						// 	delay: 3000,
 						// 	disableOnInteraction: false,
 						// }}
-						spaceBetween={50}
+						slidesPerView={screenWidth}
+						spaceBetween={30}
 						centeredSlides={true}
 						pagination={{ clickable: true }}
 						loop={true}
@@ -241,7 +253,7 @@ export default function Home() {
 					</Swiper>
 				</div>
 			</section>
-			<section className="">
+			<section id="about" className="" ref={aboutRef}>
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<div className="mb-[1.5rem]">
 						<h2 className={`${font.className} mb-2`}>{translate("aboutHeading")}</h2>
@@ -256,9 +268,9 @@ export default function Home() {
 					<div className="mt-[2rem]">
 						<h2 className={`${font.className} mb-4`}>{translate("skills")}</h2>
 
-						<div className="flex flex-wrap justify-between gap-2 gap-y-[1.5rem]">
+						<div className="flex flex-wrap justify-between gap-2 gap-y-[1.5rem] md:gap-[2rem] lg:gap-4 md:flex-nowrap">
 							{skills.map(({ name, img }, index) => (
-								<div key={index} className="flex flex-col items-center gap-[6px] w-[48%] lg:w-[25%]">
+								<div key={index} className="flex flex-col items-center gap-[6px] w-[30%] md:w-[12%] lg:w-[15%] text-center">
 									<Image
 										src={img}
 										alt={name}
