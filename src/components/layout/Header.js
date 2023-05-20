@@ -151,87 +151,89 @@ const Header = ({ satoshi, font }) => {
 					id="nav-menu"
 					className={`absolute z-[100] inset-0 h-[100svh] transition duration-[400ms] p-5 pl-6  ${
 						!isMenuOpen ? "translate-x-[-100%] " : "translate-x-0 "
-					} flex flex-col`}
+					} `}
 				>
-					<div className="flex justify-between items-center">
-						<Link onClick={hide} href="/" locale={router.locale} className="text-[1.5rem] font-medium">
-							289Volt<span className="text-sm">⚡</span>
-						</Link>
-						<button
-							onClick={hide}
-							aria-controls="mobile-menu"
-							aria-expanded={`${isMenuOpen ? "true" : "false"}`}
-							className="bg-white rounded-full w-[40px] aspect-square flex items-center justify-center border-black border-[1.5px]"
-						>
-							<Image src={close} alt="close" />
-						</button>
-					</div>
-					<div className="flex flex-col h-full justify-between">
-						<div className="nav-top-section">
-							<nav className="mt-[3.5rem]">
-								<ul className="flex flex-col gap-6">
-									{navLinks.map((link) => (
-										<li className="" key={link.name}>
-											<Link
-												onClick={hide}
-												href={link.path}
-												locale={router.locale}
-												className="nav-link text-[1.9rem] uppercase font-medium"
-											>
-												{translate(link.name)}
-											</Link>
-										</li>
-									))}
-								</ul>
-							</nav>
-							<Link
-								href=""
-								locale={router.locale}
-								className="block mt-6 px-[16px] py-[14px] bg-black text-white dark:bg-white dark:text-black font-medium w-fit rounded-[5px] text-[1.5rem]"
-							>
-								{translate("resume")}
+					<div className="grid grid-rows-[auto_1fr] h-[100%] bg-white dark:bg-secondary">
+						<div className="flex justify-between items-center">
+							<Link onClick={hide} href="/" locale={router.locale} className="text-[1.5rem] font-medium">
+								289Volt<span className="text-sm">⚡</span>
 							</Link>
+							<button
+								onClick={hide}
+								aria-controls="mobile-menu"
+								aria-expanded={`${isMenuOpen ? "true" : "false"}`}
+								className="bg-white rounded-full w-[40px] aspect-square flex items-center justify-center border-black border-[1.5px]"
+							>
+								<Image src={close} alt="close" />
+							</button>
 						</div>
-						{/* This part contains the options to change languages and social links */}
-						<div className="nav-bottom-section space-y-7 font-medium">
-							<div className="space-y-2">
-								<p className="text-sm font-medium">
-									{translate("language")} : {localAbrrv[router.locales.indexOf(router.locale)].lang}
-								</p>
-								<div className="flex items-center gap-4">
-									{router.locales.map((locale) => (
-										<Link href="/" locale={locale} key={locale} className={`flex items-center `}>
-											<Image
-												src={
-													locale === "en"
-														? english
-														: locale === "fr"
-														? french
-														: locale === "es"
-														? spanish
-														: locale === "de" && german
-												}
-												alt={locale}
-												key={locale}
-												className="w-7 "
-											/>
-										</Link>
-									))}
-								</div>
+						<div className="flex flex-col h-ful justify-between">
+							<div className="nav-top-section">
+								<nav className="mt-[3.5rem]">
+									<ul className="flex flex-col gap-6">
+										{navLinks.map((link) => (
+											<li className="" key={link.name}>
+												<Link
+													onClick={hide}
+													href={link.path}
+													locale={router.locale}
+													className="nav-link text-[1.9rem] uppercase font-medium"
+												>
+													{translate(link.name)}
+												</Link>
+											</li>
+										))}
+									</ul>
+								</nav>
+								<Link
+									href=""
+									locale={router.locale}
+									className="block mt-6 px-[16px] py-[14px] bg-black text-white dark:bg-white dark:text-black font-medium w-fit rounded-[5px] text-[1.5rem]"
+								>
+									{translate("resume")}
+								</Link>
 							</div>
-							<div className="space-y-1">
-								<p className="text-sm font-medium">{translate("connect")}</p>
-								<div className="grid grid-cols-2 gap-2 gap-y-2 w-[60%]">
-									{socialLinks.map((link) => (
-										<Link
-											href={link.path}
-											key={link.name}
-											className="uppercase border-b-black dark:border-b-white border-b-2 w-fit"
-											target="_blank"
-										>
-											{link.name}
-										</Link>
-									))}
+							{/* This part contains the options to change languages and social links */}
+							<div className="nav-bottom-section space-y-7 font-medium">
+								<div className="space-y-2">
+									<p className="text-sm font-medium">
+										{translate("language")} : {localAbrrv[router.locales.indexOf(router.locale)].lang}
+									</p>
+									<div className="flex items-center gap-4">
+										{router.locales.map((locale) => (
+											<Link href="/" locale={locale} key={locale} className={`flex items-center `}>
+												<Image
+													src={
+														locale === "en"
+															? english
+															: locale === "fr"
+															? french
+															: locale === "es"
+															? spanish
+															: locale === "de" && german
+													}
+													alt={locale}
+													key={locale}
+													className="w-7 "
+												/>
+											</Link>
+										))}
+									</div>
+								</div>
+								<div className="space-y-1">
+									<p className="text-sm font-medium">{translate("connect")}</p>
+									<div className="grid grid-cols-2 gap-2 gap-y-2 w-[60%]">
+										{socialLinks.map((link) => (
+											<Link
+												href={link.path}
+												key={link.name}
+												className="uppercase border-b-black dark:border-b-white border-b-2 w-fit"
+												target="_blank"
+											>
+												{link.name}
+											</Link>
+										))}
+									</div>
 								</div>
 							</div>
 						</div>
