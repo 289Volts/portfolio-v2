@@ -40,7 +40,7 @@ const Footer = () => {
 				</div>
 				<div className="">
 					<p className="font-medium mb-1">Connect with me</p>
-					<div className="flex gap-4 justify-center">
+					<div className="flex gap-4 justify-center flex-wrap">
 						{socialLinks.map((link) => (
 							<Link
 								href={link.path}
