@@ -19,7 +19,7 @@ body {
 }
 
 #nav-menu {
-	@apply bg-[#FFFEFE] dark:bg-secondary !important;
+	@apply bg-white dark:bg-secondary !important;
 }
 
 h2 {
