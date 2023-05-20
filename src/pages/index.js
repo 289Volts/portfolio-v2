@@ -46,7 +46,7 @@ export default function Home() {
 	}, [theme]);
 
 	useEffect(() => {
-		if (window.innerWidth <= 768) {
+		if (window.innerWidth >= 768) {
 			setScreenWidth(2);
 		} else if (window.innerWidth >= 1300) {
 			setScreenWidth(3);
@@ -292,7 +292,9 @@ export default function Home() {
 				<div className="w-[90%] lg:w-[80%] xl:w-[70%] mx-auto">
 					<div className="md:flex gap-8 justify-between">
 						<div className="mb-[1.5rem] md:mt-9">
-							<h2 className={`${font.className} md:text-[3rem] xl:text-[4rem] leading-[1.2] font-black`}>{otherTranslate("contactHeading")}</h2>
+							<h2 className={`${font.className} md:text-[3rem] xl:text-[4rem] leading-[1.2] font-black`}>
+								{otherTranslate("contactHeading")}
+							</h2>
 							<p className="text-[1.12rem] md:text-[1.3rem] lg:text-[1.5rem]">{otherTranslate("contactSubHeading")} </p>
 						</div>
 						<ContactForm />
