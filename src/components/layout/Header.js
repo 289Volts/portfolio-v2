@@ -12,25 +12,6 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Hamburger from "./Hamburger";
 import { useTheme } from "next-themes";
 
-const navLinks = [
-	{
-		name: "home",
-		path: "/",
-	},
-	{
-		name: "about",
-		path: "/#about",
-	},
-	{
-		name: "projects",
-		path: "/projects",
-	},
-	{
-		name: "contact",
-		path: "/#contact",
-	},
-];
-
 const socialLinks = [
 	{
 		name: "Twitter",
@@ -68,6 +49,10 @@ const Header = ({ satoshi, font }) => {
 	const router = useRouter();
 	const { t: translate } = useTranslation("header");
 
+	const contactRef = useRef(null);
+	const aboutRef = useRef(null);
+	const projectsRef = useRef(null);
+
 	const showNav = () => {
 		setIsMenuOpen(true);
 		// document.body.classList.add("fixedBody");
@@ -92,6 +77,27 @@ const Header = ({ satoshi, font }) => {
 		},
 	];
 
+	const navLinks = [
+		{
+			name: "home",
+			path: "/",
+		},
+		{
+			name: "about",
+			path: "/#about",
+			ref: aboutRef,
+		},
+		{
+			name: "projects",
+			path: "/projects",
+		},
+		{
+			name: "contact",
+			path: "/#contact",
+			ref: contactRef,
+		},
+	];
+
 	const hideLang = () => {
 		setIsLangOpen(false);
 	};
@@ -101,6 +107,16 @@ const Header = ({ satoshi, font }) => {
 		if (isLangOpen) {
 			hideLang();
 		}
+	};
+
+	const handleScroll = (ref) => {
+		// window.scrollTo({
+		// 	top: ref.current.offsetTop - 72,
+		// 	behavior: "smooth",
+		// });
+		document.getElementById(ref.current.id).scrollIntoView({ behavior: "smooth" });
+
+		console.log(ref);
 	};
 	useEffect(() => setMounted(true), []);
 
@@ -246,7 +262,6 @@ const Header = ({ satoshi, font }) => {
 								{navLinks.map((link) => (
 									<li className="" key={link.name}>
 										<Link
-											onClick={hide}
 											href={link.path}
 											locale={router.locale}
 											className={`${
