@@ -23,7 +23,7 @@ body {
 }
 
 h2 {
-	@apply text-[1.5rem] font-semibold;
+	@apply text-[1.8rem] font-extrabold;
 }
 
 :focus {
