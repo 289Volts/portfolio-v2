@@ -6,9 +6,9 @@ import chevron from "../../public/assets/icons/chevron.svg";
 import blackChevron from "../../public/assets/icons/blackChev.svg";
 import { gsap } from "gsap";
 import React, { useRef, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-
 import Link from "next/link";
 import { t } from "i18next";
 import { useTheme } from "next-themes";
@@ -38,7 +38,7 @@ export default function Home() {
 	const valueRef = useRef(null);
 	const contactRef = useRef(null);
 	const aboutRef = useRef(null);
-
+	const router = useRouter();
 
 	useEffect(() => {
 		setIsThemeLight(theme === "light" ? true : false);
@@ -175,12 +175,19 @@ export default function Home() {
 								<p className="">{translate("valuePropositionSubtitle2")}</p>
 								<p className="">{translate("valuePropositionSubtitle3")}</p>
 							</div>
-							<div className="flex mt-4">
+							<div className="flex mt-4 gap-4">
 								<Link
 									className="text-center uppercase transition duration-[400ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-3 rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 									href="/#contact"
 								>
 									{otherTranslate("cta")}
+								</Link>
+								<Link
+									href=""
+									locale={router.locale}
+									className="block mt-6 px-[16px] py-[14px] bg-black text-white dark:bg-white dark:text-black font-medium w-fit rounded-[5px] text-[1.5rem]"
+								>
+									{translate("resume")}
 								</Link>
 							</div>
 						</div>
