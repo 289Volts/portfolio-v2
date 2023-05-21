@@ -80,7 +80,6 @@ const Header = ({ font }) => {
 		{
 			name: "about",
 			path: "/#about",
-			ref: aboutRef,
 		},
 		{
 			name: "projects",
@@ -89,7 +88,6 @@ const Header = ({ font }) => {
 		{
 			name: "contact",
 			path: "/#contact",
-			ref: contactRef,
 		},
 	];
 
