@@ -45,6 +45,7 @@ const Header = ({ font }) => {
 	const [mounted, setMounted] = useState(false);
 	const [isLangOpen, setIsLangOpen] = useState(false);
 	const { theme, setTheme } = useTheme();
+	const { isMenuOpen, setIsMenuOpen } = useHeader();
 
 	const router = useRouter();
 	const { t: translate } = useTranslation("header");
@@ -102,17 +103,7 @@ const Header = ({ font }) => {
 		}
 	};
 
-	const { isMenuOpen, setIsMenuOpen } = useHeader();
 
-	const handleScroll = (ref) => {
-		// window.scrollTo({
-		// 	top: ref.current.offsetTop - 72,
-		// 	behavior: "smooth",
-		// });
-		document.getElementById(ref.current.id).scrollIntoView({ behavior: "smooth" });
-
-		console.log(ref);
-	};
 	useEffect(() => setMounted(true), []);
 
 	if (!mounted) return null;
@@ -120,7 +111,7 @@ const Header = ({ font }) => {
 	return (
 		<>
 			<header className={`${font} sticky top-0 left-0 z-[2] w-full`}>
-				<div className="mobile-wrapper bg-white/[0.1] backdrop-blur-[8px] md:hidden">
+				<div className="mobile-wrapper bg-white/[0.1] backdrop-blur-[18px] md:hidden">
 					<div className="p-3 flex items-center justify-between">
 						<Link href="/" locale={router.locale} className="text-[1.5rem] font-medium">
 							289Volt<span className="text-sm">⚡</span>
@@ -182,7 +173,8 @@ const Header = ({ font }) => {
 									</ul>
 								</nav>
 								<Link
-									href=""
+									target="_blank"
+									href="https://bit.ly/41YYvoS"
 									locale={router.locale}
 									className="block mt-6 px-[16px] py-[14px] bg-black text-white dark:bg-white dark:text-black font-medium w-fit rounded-[5px] text-[1.5rem]"
 								>
@@ -235,9 +227,9 @@ const Header = ({ font }) => {
 						</div>
 					</div>
 				</div>
-				<div className="desktop-wrapper bg-white/[0.1] backdrop-blur-[8px] hidden md:block">
+				<div className="desktop-wrapper bg-white/[0.4] backdrop-blur-[18px] hidden md:block">
 					<div className="w-[90%] lg:w-[80%] mx-auto py-3 flex items-center justify-between transition duration-300">
-						<Link href="/" locale={router.locale} className="text-[1.5rem] font-medium">
+						<Link href="/" locale={router.locale} className="text-[1.5rem] font-medium text-black">
 							289Volt<span className="text-sm">⚡</span>
 						</Link>
 
@@ -255,7 +247,7 @@ const Header = ({ font }) => {
 								))}
 							</div>
 							<nav className="">
-								<ul className="flex gap-4 lg:gap-5">
+								<ul className="flex gap-4 lg:gap-5 text-black">
 									{navLinks.map((link) => (
 										<li className="" key={link.name}>
 											<Link
@@ -263,7 +255,7 @@ const Header = ({ font }) => {
 												locale={router.locale}
 												className={`${
 													router.asPath === link.path ? "border-b-[2px] border-b-black dark:border-b-white" : ""
-												} uppercase font-medium relative before:w-full before:h-[1.5px] before:bg-black before:dark:bg-white before:absolute before:bottom-[-2px] before:left-0 before:transform before:scale-x-0 before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100 before:origin-left`}
+												} lg:text-[1.05rem]  font-[500] relative before:w-full before:h-[1.5px] before:bg-black before:dark:bg-white before:absolute before:bottom-[-2px] before:left-0 before:transform before:scale-x-0 before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100 before:origin-left`}
 											>
 												{translate(link.name)}
 											</Link>

@@ -15,7 +15,7 @@ const satoshi = localFont({
 			weight: "400",
 		},
 		{
-			path: "../../public/fonts/Satoshi/Satoshi-Medium.woff2",
+			path: "../../public/fonts/Satoshi/Satoshi-Medium.otf",
 			weight: "500",
 		},
 		{
