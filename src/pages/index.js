@@ -144,7 +144,7 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-
+			{/* npm install -g @sanity/cli */}
 			<section className="pt-[7rem] mb-[4rem] flex flex-col lg:h-[60vh]">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<div className="md:w-[75%] space-y-[2.2rem]">
