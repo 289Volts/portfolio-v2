@@ -46,6 +46,39 @@ const projects = {
       },
     },
     {
+      name: 'date',
+      title: 'Date',
+      type: 'datetime',
+    },
+    {
+      name: 'client',
+      title: 'Client',
+      type: 'string',
+    },
+    {
+      name: 'role',
+      title: 'Role',
+      type: 'string',
+    },
+    {
+      name: 'link',
+      title: 'Link',
+      type: 'url',
+    },
+    {
+      name: 'github',
+      title: 'Github',
+      type: 'url',
+    },
+    {
+      name: 'bannerImg',
+      title: 'Banner Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: 'image',
       title: 'Images',
       type: 'array',
