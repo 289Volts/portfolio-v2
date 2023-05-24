@@ -267,9 +267,10 @@ const Header = ({ font }) => {
 								<button
 									title="Change Language"
 									id="languageChangeToggle"
-									className="flex items-center"
+									className="flex items-center dark:bg-slate-800 bg-[#e1dfdf] p-1 px-3 rounded-full duration-100 transition"
 									onClick={() => showLang()}
 								>
+									
 									<Image
 										src={
 											router.locale === "en"
@@ -282,8 +283,11 @@ const Header = ({ font }) => {
 										}
 										alt={router.locale}
 										key={router.locale}
-										className="w-7 "
+										className="w-6 "
 									/>
+									<span className="uppercase ml-2 font-medium">
+										{localAbrrv[router.locales.indexOf(router.locale)].abbrv}
+									</span>
 								</button>
 								<ul
 									aria-labelledby="languageChangeToggle"

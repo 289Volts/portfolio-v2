@@ -26,6 +26,7 @@ import tailwindcssImg from "../../public/assets/images/skills/tailwindcss.webp";
 import framerImg from "../../public/assets/images/skills/framer.webp";
 import firebaseImg from "../../public/assets/images/skills/firebase.webp";
 import mongodbImg from "../../public/assets/images/skills/mongodb.webp";
+import { client } from "lib/client";
 const font = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -144,7 +145,6 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			{/* npm install -g @sanity/cli */}
 			<section className="pt-[7rem] mb-[4rem] flex flex-col lg:h-[60vh]">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<div className="md:w-[75%] space-y-[2.2rem]">
@@ -332,10 +332,21 @@ export default function Home() {
 	);
 }
 
-export async function getStaticProps({ locale, defaultLocale }) {
+// export async function getStaticProps({ locale, defaultLocale }) {
+// 	return {
+// 		props: {
+// 			...(await serverSideTranslations(locale ?? defaultLocale, ["common", "home", "header", "footer"])),
+// 		},
+// 	};
+// }
+
+export const getServerSideProps = async ({ locale, defaultLocale }) => {
+	const query = `*[_type == "projects"]`;
+	const fetchedProjects = await client.fetch(query);
 	return {
 		props: {
+			fetchedProjects,
 			...(await serverSideTranslations(locale ?? defaultLocale, ["common", "home", "header", "footer"])),
 		},
 	};
-}
+};
