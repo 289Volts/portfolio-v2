@@ -32,8 +32,18 @@ const projects = {
   type: 'document',
   fields: [
     {
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+    },
+    {
       name: 'title',
       title: 'Title',
+      type: 'localeString',
+    },
+    {
+      name: 'description',
+      title: 'Description',
       type: 'localeString',
     },
     {
@@ -48,7 +58,7 @@ const projects = {
     {
       name: 'date',
       title: 'Date',
-      type: 'datetime',
+      type: 'string',
     },
     {
       name: 'client',
@@ -99,11 +109,11 @@ const projects = {
       title: 'Solution',
       type: 'localeString',
     },
-    {
-      name: 'results',
-      title: 'Results',
-      type: 'localeString',
-    },
+    // {
+    //   name: 'results',
+    //   title: 'Results',
+    //   type: 'localeString',
+    // },
     {
       name: 'technologies',
       title: 'Technologies Used',
