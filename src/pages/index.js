@@ -26,9 +26,12 @@ import tailwindcssImg from "../../public/assets/images/skills/tailwindcss.webp";
 import framerImg from "../../public/assets/images/skills/framer.webp";
 import firebaseImg from "../../public/assets/images/skills/firebase.webp";
 import mongodbImg from "../../public/assets/images/skills/mongodb.webp";
+import { client } from "lib/client";
+import { fetchTranslations } from "lib/sanity";
+import ProjectCard from "@/components/ProjectCard";
 const font = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ fetchedProjects }) {
 	const { t: translate } = useTranslation("home");
 	const { t: otherTranslate } = useTranslation("common");
 	const [isOpen, setIsOpen] = useState([]);
@@ -39,7 +42,7 @@ export default function Home() {
 	const contactRef = useRef(null);
 	const aboutRef = useRef(null);
 	const router = useRouter();
-
+	// console.log(fetchedProjects);
 	useEffect(() => {
 		setIsThemeLight(theme === "light" ? true : false);
 	}, [theme]);
@@ -51,6 +54,19 @@ export default function Home() {
 			setScreenWidth(3);
 		}
 	}, []);
+
+	// const [translations, setTranslations] = useState(null);
+
+	// useEffect(() => {
+	//   const fetchTranslationsAsync = async () => {
+	// 	const translations = await fetchTranslations();
+	// 	setTranslations(translations);
+	//   };
+
+	//   fetchTranslationsAsync();
+	// }, [router.locale]);
+
+	// console.log(fetchedProjects);
 	// useEffect(() => {
 	// 	const element = elementRef.current;
 
@@ -144,8 +160,7 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			{/* npm install -g @sanity/cli */}
-			<section className="pt-[7rem] mb-[4rem] flex flex-col lg:h-[60vh]">
+			<section className="pt-[7rem] mb-[4rem flex flex-col lg:h-[60vh]">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<div className="md:w-[75%] space-y-[2.2rem]">
 						<div className="space-y-2">
@@ -232,7 +247,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="my-[4rem]">
+			<section className="my-[4rem">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<div className="">
 						<h2 className={`${font.className}`}>{translate("testimonialHeading")}</h2>
@@ -314,7 +329,21 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section id="contact" className="mt-[4rem]" ref={contactRef}>
+			<section className="">
+				<div className="w-[90%] lg:w-[80%] mx-auto">
+					<div className="mb-[2rem]">
+						<h2 className={`${font.className}`}>{otherTranslate("projectsHeading")}</h2>
+						<p className="text-[1.17rem] leading-[1.5]">{otherTranslate("projectsSubHeading")}</p>
+					</div>
+
+					<div className="">
+						{fetchedProjects.map((project) => (
+							<ProjectCard project={project} locale={router.locale} />
+						))}
+					</div>
+				</div>
+			</section>
+			<section id="contact" className="mt-[4rem" ref={contactRef}>
 				<div className="w-[90%] lg:w-[80%] xl:w-[70%] mx-auto">
 					<div className="md:flex gap-8 justify-between">
 						<div className="mb-[1.5rem] md:mt-9">
@@ -332,10 +361,22 @@ export default function Home() {
 	);
 }
 
-export async function getStaticProps({ locale, defaultLocale }) {
+// export async function getStaticProps({ locale, defaultLocale }) {
+// 	return {
+// 		props: {
+// 			...(await serverSideTranslations(locale ?? defaultLocale, ["common", "home", "header", "footer"])),
+// 		},
+// 	};
+// }
+
+export const getServerSideProps = async ({ locale, defaultLocale }) => {
+	const query = `*[_type == "projects"]`;
+	const fetchedProjects = await client.fetch(query);
+
 	return {
 		props: {
+			fetchedProjects,
 			...(await serverSideTranslations(locale ?? defaultLocale, ["common", "home", "header", "footer"])),
 		},
 	};
-}
+};

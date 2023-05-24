@@ -23,7 +23,7 @@ body {
 }
 
 h2 {
-	@apply text-[1.8rem] font-extrabold;
+	@apply text-[1.6rem] font-extrabold;
 }
 
 :focus {
@@ -79,4 +79,8 @@ a {
 
 .error-msg {
 	@apply text-red-500 text-sm mt-1 font-medium;
+}
+
+.projectCard-img {
+	width: 100% !important;
 }

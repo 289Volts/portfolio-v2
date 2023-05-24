@@ -32,8 +32,18 @@ const projects = {
   type: 'document',
   fields: [
     {
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+    },
+    {
       name: 'title',
       title: 'Title',
+      type: 'localeString',
+    },
+    {
+      name: 'description',
+      title: 'Description',
       type: 'localeString',
     },
     {
@@ -43,6 +53,39 @@ const projects = {
       options: {
         source: 'title.en',
         maxLength: 96,
+      },
+    },
+    {
+      name: 'date',
+      title: 'Date',
+      type: 'string',
+    },
+    {
+      name: 'client',
+      title: 'Client',
+      type: 'string',
+    },
+    {
+      name: 'role',
+      title: 'Role',
+      type: 'string',
+    },
+    {
+      name: 'link',
+      title: 'Link',
+      type: 'url',
+    },
+    {
+      name: 'github',
+      title: 'Github',
+      type: 'url',
+    },
+    {
+      name: 'bannerImg',
+      title: 'Banner Image',
+      type: 'image',
+      options: {
+        hotspot: true,
       },
     },
     {
@@ -66,11 +109,11 @@ const projects = {
       title: 'Solution',
       type: 'localeString',
     },
-    {
-      name: 'results',
-      title: 'Results',
-      type: 'localeString',
-    },
+    // {
+    //   name: 'results',
+    //   title: 'Results',
+    //   type: 'localeString',
+    // },
     {
       name: 'technologies',
       title: 'Technologies Used',
