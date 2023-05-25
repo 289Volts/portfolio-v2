@@ -11,7 +11,9 @@ const ProjectCard = ({project, locale}) => {
     const projectSlug = slug.current
 	return (
 		<div className="">
-			<Image src={imgSrc} alt={imgTitle} width={300} height={300} className="projectCard-img" />
+			<div className="">
+                <Image src={imgSrc} alt={imgTitle} width={300} height={300} className="projectCard-img" />
+            </div>
 			<div className="">
 				<div className="flex items-center justify-between">
 					<h3 className="">{title[locale]}</h3>
