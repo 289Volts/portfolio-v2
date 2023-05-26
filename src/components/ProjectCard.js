@@ -3,35 +3,35 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProjectCard = ({project, locale}) => {
-    const { bannerImg, description, title, technologies, github, link, slug } = project
+const ProjectCard = ({ project, locale }) => {
+	const { bannerImg, description, title, technologies, github, link, slug } = project;
 
-    const imgSrc = urlFor(bannerImg)
-    const imgTitle = title
-    const projectSlug = slug.current
+	const imgSrc = urlFor(bannerImg);
+	const imgTitle = title;
+	const projectSlug = slug.current;
 	return (
-		<div className="">
-			<div className="">
-                <Image src={imgSrc} alt={imgTitle} width={300} height={300} className="projectCard-img" />
-            </div>
-			<div className="">
-				<div className="flex items-center justify-between">
-					<h3 className="">{title[locale]}</h3>
-					<Link href={`/projects/${projectSlug}`} className="">
+		<div className="border-black border dark:border-white rounded-[1rem] overflow-hidden">
+			<div className="flex justify-center p-4 bg-black dark:bg-white">
+				<Image src={imgSrc} alt={imgTitle} width={300} height={300} className="projectCard-img" />
+			</div>
+			<div className="p-4 space-y-2">
+				<div className="flex gap-4 items-end">
+					<h3 className="text-[1.1rem] font-medium">{title[locale]}</h3>
+					<Link href={`/projects/${projectSlug}`} className="text-[0.8rem] border-b border-b-black dark:border-b-white text-secondary">
 						View
 					</Link>
 				</div>
-				<p className="">{description[locale]}</p>
+				<p className="text-sm ">{description[locale]}</p>
 				<div className="space-x-3">
 					{technologies.map((tech) => (
 						<span className="">{tech}</span>
 					))}
 				</div>
-				<div className="flex items-center justify-between">
-					<Link href={github} target="_blank">
+				<div className="flex gap-4">
+					<Link href={github} target="_blank" className="border-b border-b-black dark:border-b-white">
 						Code
 					</Link>
-					<Link href={link} target="_blank">
+					<Link href={link} target="_blank" className="border-b border-b-black dark:border-b-white">
 						Preview
 					</Link>
 				</div>
