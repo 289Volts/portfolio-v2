@@ -61,7 +61,7 @@ a {
 }
 
 .swiper-pagination-bullet-active {
-	@apply bg-black dark:bg-primary !important;
+	@apply bg-black dark:bg-primaryDark !important;
 }
 
 .form-control {
@@ -74,11 +74,11 @@ a {
 
 .form-control input,
 .form-control textarea {
-	@apply p-3 rounded-lg border-2 border-gray-300 dark:border-primary focus:outline-primary dark:focus:outline-red-600 dark:text-black dark:bg-white mt-1;
+	@apply p-3 rounded-lg border-2 border-gray-300 dark:border-primaryDark focus:outline-primaryLight dark:focus:outline-red-600 dark:text-black dark:bg-white mt-1;
 }
 
 .error-msg {
-	@apply text-red-500 text-sm mt-1 font-medium;
+	@apply text-primaryLight text-sm mt-1 font-medium;
 }
 
 .projectCard-img {
