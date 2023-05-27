@@ -12,8 +12,8 @@ const ProjectCard = ({ project, locale }) => {
 	const projectSlug = slug.current;
 	return (
 		<div className="border-black border dark:border-white rounded-[1rem] overflow-hidden">
-			<div className="flex justify-center p-4 bg-black dark:bg-white">
-				<Image src={imgSrc} alt={imgTitle} width={300} height={300} className="projectCard-img" />
+			<div className="flex justify-center p-2 bg-black dark:bg-white">
+				<Image src={imgSrc} alt={imgTitle} width={300} height={300} className="projectCard-img rounded-tr-[1rem] rounded-tl-[1rem]" />
 			</div>
 			<div className="p-4 py-7 flex flex-col gap-2 font-medium">
 				<div className="flex gap-2 items-end">
