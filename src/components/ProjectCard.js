@@ -13,7 +13,13 @@ const ProjectCard = ({ project, locale }) => {
 	return (
 		<div className="border-black border dark:border-white rounded-[1rem] overflow-hidden">
 			<div className="flex justify-center p-2 bg-black dark:bg-white">
-				<Image src={imgSrc} alt={imgTitle} width={300} height={300} className="projectCard-img rounded-tr-[1rem] rounded-tl-[1rem]" />
+				<Image
+					src={imgSrc}
+					alt={imgTitle}
+					width={300}
+					height={300}
+					className="projectCard-img rounded-tr-[1rem] rounded-tl-[1rem]"
+				/>
 			</div>
 			<div className="p-4 py-7 flex flex-col gap-2 font-medium">
 				<div className="flex gap-2 items-end">
@@ -27,7 +33,9 @@ const ProjectCard = ({ project, locale }) => {
 				<p className="">{description[locale]}</p>
 				<div className="space-x-2">
 					{technologies.map((tech) => (
-						<span className="bg-black dark:bg-white p-2 py-1 rounded-full text-xs text-white dark:text-black font-medium">{tech}</span>
+						<span className="bg-black dark:bg-white p-2 py-1 rounded-full text-xs text-white dark:text-black font-medium">
+							{tech}
+						</span>
 					))}
 				</div>
 				<div className="flex gap-4 mt-5">
