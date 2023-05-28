@@ -2,35 +2,58 @@ import { urlFor } from "lib/client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import LinkArr from "../../public/assets/icons/LinkArr";
 
-const ProjectCard = ({project, locale}) => {
-    const { bannerImg, description, title, technologies, github, link, slug } = project
+const ProjectCard = ({ project, locale }) => {
+	const { bannerImg, description, title, technologies, github, link, slug } = project;
 
-    const imgSrc = urlFor(bannerImg)
-    const imgTitle = title
-    const projectSlug = slug.current
+	const imgSrc = urlFor(bannerImg);
+	const imgTitle = title;
+	const projectSlug = slug.current;
 	return (
-		<div className="">
-			<Image src={imgSrc} alt={imgTitle} width={300} height={300} className="projectCard-img" />
-			<div className="">
-				<div className="flex items-center justify-between">
-					<h3 className="">{title[locale]}</h3>
-					<Link href={`/projects/${projectSlug}`} className="">
-						View
+		<div className="border-black border dark:border-white rounded-[1rem] overflow-hidden">
+			<div className="flex justify-center p-2 bg-black dark:bg-white">
+				<Image
+					src={imgSrc}
+					alt={imgTitle}
+					width={300}
+					height={300}
+					className="projectCard-img rounded-tr-[1rem] rounded-tl-[1rem]"
+				/>
+			</div>
+			<div className="p-4 py-7 flex flex-col gap-2 font-medium">
+				<div className="flex gap-2 items-end">
+					<Link
+						href={`/projects/${projectSlug}`}
+						className="text-[1.3rem]  text-primaryLight dark:text-primaryDark leading-[1.3] flex gap-1"
+					>
+						{title[locale]}
 					</Link>
 				</div>
 				<p className="">{description[locale]}</p>
-				<div className="space-x-3">
+				<div className="space-x-2">
 					{technologies.map((tech) => (
-						<span className="">{tech}</span>
+						<span className="bg-black dark:bg-white p-2 py-1 rounded-full text-xs text-white dark:text-black font-medium">
+							{tech}
+						</span>
 					))}
 				</div>
-				<div className="flex items-center justify-between">
-					<Link href={github} target="_blank">
-						Code
+				<div className="flex gap-4 mt-5">
+					<Link
+						href={github}
+						target="_blank"
+						className="text-primaryLight dark:text-primaryDark leading-[1.3] flex gap-1"
+					>
+						<span className="border-b-2 border-b-black dark:border-b-white">Code</span>
+						<LinkArr />
 					</Link>
-					<Link href={link} target="_blank">
-						Preview
+					<Link
+						href={link}
+						target="_blank"
+						className="text-primaryLight dark:text-primaryDark leading-[1.3] flex gap-1"
+					>
+						<span className="border-b-2 border-b-black dark:border-b-white">Preview</span>
+						<LinkArr />
 					</Link>
 				</div>
 			</div>

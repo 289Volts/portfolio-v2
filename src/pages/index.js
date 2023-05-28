@@ -173,14 +173,14 @@ export default function Home({ fetchedProjects }) {
 							<button
 								aria-label="navigation-button"
 								onClick={() => handleScroll(contactRef)}
-								className="w-full font-medium md:w-fit text-center transition duration-[350ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 md:px-6 py-[14px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
+								className="w-full font-medium md:w-fit text-center transition duration-[350ms] dark:bg-primaryDark lg:hover:bg-red-700 bg-primaryLight px-4 md:px-6 py-[14px] rounded-[1rem] lg:dark:hover:bg-primaryLight text-white"
 							>
 								{otherTranslate("cta")}
 							</button>
 							<button
 								aria-label="navigation-button"
 								onClick={() => handleScroll(valueRef)}
-								className="w-full font-medium md:w-fit text-center transition duration-[350ms] border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primary px-4 md:px-6 py-[14px] md:py-[12.5px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
+								className="w-full font-medium md:w-fit text-center transition duration-[350ms] border-2 border-primaryLight dark:border-2 lg:hover:border-2 lg:hover:border-bg-red-500 dark:border-primaryDark px-4 md:px-6 py-[14px] md:py-[12.5px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
 							>
 								{translate("heroCta2")}
 							</button>
@@ -201,7 +201,7 @@ export default function Home({ fetchedProjects }) {
 							</div>
 							<div className="flex mt-4 gap-4 items-center">
 								<Link
-									className="text-center uppercase transition duration-[350ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[15px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
+									className="text-center uppercase transition duration-[350ms] dark:bg-primaryDark lg:hover:bg-primaryDark bg-primaryLight px-4 py-[15px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 									href="/#contact"
 								>
 									{otherTranslate("cta")}
@@ -210,7 +210,7 @@ export default function Home({ fetchedProjects }) {
 									target="_blank"
 									href="https://bit.ly/41YYvoS"
 									locale={router.locale}
-									className="uppercase font-medium text-center border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primary px-8  py-[13px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
+									className="uppercase font-medium text-center border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primaryDark px-8 py-[13px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
 								>
 									{translate("resume")}
 								</Link>
