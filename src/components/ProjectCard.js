@@ -11,7 +11,9 @@ const ProjectCard = ({ project, locale }) => {
 	const imgTitle = title;
 	const projectSlug = slug.current;
 	return (
-		<div className="border-black border dark:border-white rounded-[1rem] overflow-hidden">
+		<div
+			className="border-black border dark:border-white rounded-tr-[1rem] rounded-tl-[1rem] overflow-hidden"
+		>
 			<div className="flex justify-center p-2 bg-black dark:bg-white">
 				<Image
 					src={imgSrc}

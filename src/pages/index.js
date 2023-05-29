@@ -234,7 +234,7 @@ export default function Home({ fetchedProjects }) {
 											alt="chevron"
 											className={`${
 												isOpen.includes(index) ? "rotate-[90deg]" : null
-											} stroke-black dark:stroke-white transition duration-500`}
+											} stroke-black dark:stroke-white transition duration-500 w-auto h-auto`}
 										/>
 									</div>
 									<TinyCollapse isOpen={isOpen.includes(index)}>
@@ -337,8 +337,10 @@ export default function Home({ fetchedProjects }) {
 					</div>
 
 					<div className="">
-						{fetchedProjects.map((project) => (
-							<ProjectCard project={project} locale={router.locale} />
+						{fetchedProjects.map((project, index) => (
+							<article key={index} className="">
+								<ProjectCard project={project} locale={router.locale} />
+							</article>
 						))}
 					</div>
 				</div>
