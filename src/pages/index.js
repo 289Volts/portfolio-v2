@@ -367,14 +367,6 @@ export default function Home({ fetchedProjects }) {
 	);
 }
 
-// export async function getStaticProps({ locale, defaultLocale }) {
-// 	return {
-// 		props: {
-// 			...(await serverSideTranslations(locale ?? defaultLocale, ["common", "home", "header", "footer"])),
-// 		},
-// 	};
-// }
-
 export const getServerSideProps = async ({ locale, defaultLocale }) => {
 	const query = `*[_type == "projects"]`;
 	const fetchedProjects = await client.fetch(query);

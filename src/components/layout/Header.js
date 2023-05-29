@@ -50,7 +50,6 @@ const Header = ({ font }) => {
 	const router = useRouter();
 	const { t: translate } = useTranslation("header");
 
-
 	const showNav = () => {
 		setIsMenuOpen(true);
 	};
@@ -102,7 +101,6 @@ const Header = ({ font }) => {
 			hideLang();
 		}
 	};
-
 
 	useEffect(() => setMounted(true), []);
 
@@ -189,7 +187,7 @@ const Header = ({ font }) => {
 									</p>
 									<div className="flex items-center gap-4">
 										{router.locales.map((locale) => (
-											<Link href="/" locale={locale} key={locale} className={`flex items-center `}>
+											<Link href={`${router.asPath}`} locale={locale} key={locale} className={`flex items-center `}>
 												<Image
 													src={
 														locale === "en"
@@ -270,7 +268,6 @@ const Header = ({ font }) => {
 									className="flex items-center dark:bg-slate-800 bg-[#e1dfdf] p-1 px-3 rounded-full duration-100 transition"
 									onClick={() => showLang()}
 								>
-									
 									<Image
 										src={
 											router.locale === "en"
