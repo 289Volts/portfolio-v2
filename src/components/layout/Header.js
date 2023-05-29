@@ -298,7 +298,7 @@ const Header = ({ font }) => {
 												<li className="" key={locale}>
 													<Link
 														onClick={() => hideLang()}
-														href="/"
+														href={`${router.asPath}`}
 														locale={locale}
 														className="flex items-center gap-3  text-black font-medium"
 													>
