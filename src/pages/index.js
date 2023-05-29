@@ -27,7 +27,7 @@ import framerImg from "../../public/assets/images/skills/framer.webp";
 import firebaseImg from "../../public/assets/images/skills/firebase.webp";
 import mongodbImg from "../../public/assets/images/skills/mongodb.webp";
 import { client } from "lib/client";
-import { fetchTranslations } from "lib/sanity";
+import LinkArr from "../../public/assets/icons/LinkArr";
 import ProjectCard from "@/components/ProjectCard";
 const font = Inter({ subsets: ["latin"] });
 
@@ -343,6 +343,10 @@ export default function Home({ fetchedProjects }) {
 							</article>
 						))}
 					</div>
+					<Link href="/projects" className="flex gap-1 w-fit mx-auto mt-5">
+						<span className="">See all projects</span>
+						<LinkArr />
+					</Link>
 				</div>
 			</section>
 			<section id="contact" className="mt-[4rem" ref={contactRef}>
