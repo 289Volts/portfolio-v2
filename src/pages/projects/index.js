@@ -3,10 +3,15 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { client } from "lib/client";
 import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import LinkArr from "public/assets/icons/LinkArr";
 
 const Projects = ({ fetchedProjects }) => {
 	const { t: otherTranslate } = useTranslation("common");
 	const { t: translate } = useTranslation("projects");
+	const router = useRouter();
+	const { locale } = router;
 	return (
 		<>
 			<Head>
@@ -25,12 +30,84 @@ const Projects = ({ fetchedProjects }) => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<section className="">
-				<div className="">
+			<section className="pt-[5rem]">
+				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<div className="">
 						<h1 className="">{translate("projectHeading")}</h1>
 						<p className="">{translate("projectSubHeading")}</p>
 					</div>
+
+					{/* <div className="">
+						{fetchedProjects.map((project, index) => (
+							<div key={project.name} className="grid grid-cols-4 gap-2">
+								<p className="">{project.date}</p>
+								<p className="">{project.title[locale]}</p>
+								<p className="hidden lg:block">{project.description[locale]}</p>
+								<div className="hidden lg:block">
+									{project.technologies.map((tech) => (
+										<span key={tech} className="">
+											{tech}
+										</span>
+									))}
+								</div>
+								<div className="">
+									<Link href={project.github} target="_blank" className="">
+										<span className="">Code</span>
+									</Link>
+									<Link href={project.link} target="_blank" className="">
+										<span className="">Preview</span>
+									</Link>
+								</div>
+							</div>
+						))}
+					</div> */}
+
+					<table className="table-auto w-ful text-left">
+						<thead className="">
+							<tr className="">
+								<th className="p-4 pl-0">Date</th>
+								<th className="p-4 pl-0">Title</th>
+								<th className="hidden md:table-cell p-4 pl-0">Description</th>
+								<th className="hidden md:table-cell p-4 pl-0">Technologies</th>
+							</tr>
+						</thead>
+						<tbody>
+							{fetchedProjects.map((project, index) => (
+								<tr key={project.name} className="">
+									<td className="p-4 pl-0 pt-0">{project.date}</td>
+									<td className="p-4 pl-0 pt-0">
+										<Link href={project.slug.current} target="_blank" className="flex gap-[4px] group">
+											{project.title[locale]}
+											<LinkArr hover="group-hover:translate-y-[-0.2rem]  group-hover:translate-x-[0.2rem]" />
+										</Link>
+									</td>
+									<td className="hidden md:table-cell p-4 pl-0 pt-0">{project.description[locale]}</td>
+
+									<td className="hidden md:flex flex-wrap p-4 pl-0 pt-0">
+										{project.technologies.map((tech) => (
+											<span key={tech} className="">
+												{tech}
+											</span>
+										))}
+									</td>
+									{/* <td className="hidden lg:blockp-4 pl-0 pt-0">
+										{project.github && (
+											<Link href={project.github} target="_blank" className="flex gap-[2px] group">
+												<span className="">Code</span>
+												<LinkArr hover="group-hover:translate-y-[-0.1rem]  group-hover:translate-x-[0.2rem]" />
+											</Link>
+										)}
+										{project.link && (
+											<Link href={project.link} target="_blank" className="flex gap-[2px] group   ">
+												<span className="">Preview</span>
+												<LinkArr hover="group-hover:translate-y-[-0.1rem]  group-hover:translate-x-[0.2rem]" />
+											</Link>
+										)}
+									</td> */}
+								</tr>
+							))}
+						</tbody>
+					</table>
 				</div>
 			</section>
 		</>

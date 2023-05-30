@@ -31,7 +31,7 @@ h2 {
 }
 
 a {
-	@apply font-medium text-sm;
+	@apply font-medium;
 }
 
 .glass {

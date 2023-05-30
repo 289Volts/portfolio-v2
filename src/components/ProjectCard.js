@@ -35,7 +35,7 @@ const ProjectCard = ({ project, locale }) => {
 				<p className="">{description[locale]}</p>
 				<div className="space-x-2">
 					{technologies.map((tech) => (
-						<span className="bg-black dark:bg-white p-2 py-1 rounded-full text-xs text-white dark:text-black font-medium">
+						<span key={tech} className="bg-black dark:bg-white p-2 py-1 rounded-full text-xs text-white dark:text-black font-medium">
 							{tech}
 						</span>
 					))}
