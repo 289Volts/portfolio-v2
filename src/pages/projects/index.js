@@ -68,26 +68,25 @@ const Projects = ({ fetchedProjects }) => {
 								<th className="p-5 pl-0">Date</th>
 								<th className="p-5 pl-0">Title</th>
 								<th className="hidden md:table-cell p-5 pl-0">Description</th>
-								<th className="hidden md:table-cell p-5">Technologies</th>
-								<th className="hidden md:table-cell p-5">Links</th>
+								<th className="hidden md:table-cell p-5 pl-0">Technologies</th>
+								<th className="hidden lg:table-cell p-5 pl-0">Links</th>
 							</tr>
 						</thead>
 						<tbody>
 							{fetchedProjects.map((project) => (
-								<tr key={project.title}>
-									<td className="pb-4 pl-0 pt-0 whitespace-nowrap align-top">{project.date}</td>
-									<td className="pb-4 pl-0 pt-0 whitespace-nowrap align-top">
-										<Link href={project.slug.current} target="_blank" className="flex gap-[4px] group">
+								<tr key={project.title} className="align-top">
+									<td className="p-5 pl-0 pt-0 whitespace-nowrap">{project.date}</td>
+									<td className="p-5 pl-0 pt-0 whitespace-nowrap">
+										<Link href={project.slug.current} target="_blank" className="flex lg:hidden gap-[4px] group">
 											{project.title[locale]}
 											<LinkArr hover="lg:group-hover:translate-y-[-0.2rem]  lg:group-hover:translate-x-[0.2rem]" />
 										</Link>
+										<p className="hidden lg:block">{project.title[locale]}</p>
 									</td>
-									<td className="hidden md:table-cell w-[40%] pb-4 pl-0 pt-0 align-top">
-										{project.description[locale]}
-									</td>
+									<td className="hidden md:table-cell w-[40%] p-5 pl-0 pt-0">{project.description[locale]}</td>
 
-									<td className="hidden md:table-cell py-4 pt-0">{project.technologies.join(", ")}</td>
-									<td className="hidden lg:table-cell pb-4">
+									<td className="hidden md:table-cell p-5 pl-0 pt-0">{project.technologies.join(", ")}</td>
+									<td className="hidden lg:table-cell pb-5 align-top">
 										<div className="flex gap-4">
 											{project.github && (
 												<Link href={project.github} target="_blank" className="flex gap-[2px] group">
@@ -107,50 +106,6 @@ const Projects = ({ fetchedProjects }) => {
 							))}
 						</tbody>
 					</table>
-
-					{/* <table className="border-spacing-x- border-separate text-left w-full">
-						<thead className="">
-							<tr className="">
-								<th className="p-4 pl-0">Date</th>
-								<th className="p-4 pl-0">Title</th>
-								<th className="hidden md:table-cell p-4 pl-0">Description</th>
-								<th className="hidden md:table-cell py-4">Technologies</th>
-								<th className="hidden md:table-cell py-4">Links</th>
-							</tr>
-						</thead>
-						<tbody className="">
-							{fetchedProjects.map((project, index) => (
-								<tr key={project.name} className="">
-									<td className="pb-4 pl-0 pt-0 whitespace-nowrap align-top">{project.date}</td>
-									<td className="pb-4 pl-0 pt-0 whitespace-nowrap align-top">
-										<Link href={project.slug.current} target="_blank" className="flex gap-[4px] group">
-											{project.title[locale]}
-											<LinkArr hover="lg:group-hover:translate-y-[-0.2rem]  lg:group-hover:translate-x-[0.2rem]" />
-										</Link>
-									</td>
-									<td className="hidden md:table-cell w-1/2 pb-4 pl-0 pt-0 align-top">
-										{project.description[locale]}
-									</td>
-
-									<td className="hidden md:flex py-4 pt-0">{project.technologies.join(", ")}</td>
-									<td className="hidden lg:flex gap-4 pb-4">
-										{project.github && (
-											<Link href={project.github} target="_blank" className="flex gap-[2px] group">
-												<span className="">Code</span>
-												<LinkArr hover="group-hover:translate-y-[-0.1rem]  group-hover:translate-x-[0.2rem]" />
-											</Link>
-										)}
-										{project.link && (
-											<Link href={project.link} target="_blank" className="flex gap-[2px] group   ">
-												<span className="">Preview</span>
-												<LinkArr hover="group-hover:translate-y-[-0.1rem]  group-hover:translate-x-[0.2rem]" />
-											</Link>
-										)}
-									</td>
-								</tr>
-							))}
-						</tbody>
-					</table> */}
 				</div>
 			</section>
 		</>
