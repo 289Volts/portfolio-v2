@@ -159,7 +159,7 @@ export default function Home({ fetchedProjects }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<section className="pt-[7rem] mb-[4rem flex flex-col lg:h-[60vh]">
+			<section className="pt-[7rem] flex flex-col lg:min-h-[60vh]">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
 					<div className="md:w-[75%] space-y-[2.2rem]">
 						<div className="space-y-2">

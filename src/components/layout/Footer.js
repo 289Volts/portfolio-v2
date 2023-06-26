@@ -31,7 +31,7 @@ const Footer = () => {
   
   const year = new Date().getFullYear();
 	return (
-		<footer className="mt-[4rem] bg-black text-white py-[3rem]">
+		<footer className="mt-auto bg-black text-white py-[3rem]">
 			<div className="w-[90%] lg:w-[80%] mx-auto text-center space-y-6">
 				<div className="">
 					<Link href="/" locale={router.locale} className="text-[1.5rem] font-medium">

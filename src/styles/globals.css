@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	@apply h-full;
+}
+
 html[class="light"] .card {
 	background: rgba(255, 255, 255, 0.33);
 	border-radius: 16px;
@@ -11,7 +15,11 @@ html[class="light"] .card {
 }
 
 body {
-	@apply bg-white dark:bg-base dark:text-text text-black duration-100;
+	@apply bg-white dark:bg-base dark:text-text text-black duration-100 h-full;
+}
+
+#__next {
+	@apply h-full flex flex-col;
 }
 
 .fixedBody {
@@ -82,5 +90,5 @@ a {
 }
 
 .projectCard-img {
-	width: 100%  !important;
+	width: 100% !important;
 }
