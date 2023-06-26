@@ -10,7 +10,6 @@ import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
-import { t } from "i18next";
 import { useTheme } from "next-themes";
 import TestimonialCard from "@/components/homepage/TestimonialCard";
 import { Autoplay, Pagination } from "swiper";
@@ -169,7 +168,7 @@ export default function Home({ fetchedProjects }) {
 							</h1>
 							<p className="font-medium text-[1.2rem] leading-[1.5]">{translate("heroSubtitle")}</p>
 						</div>
-						<div className="flex flex-col md:flex-row items-center gap-4 font-bold uppercase">
+						<div className="flex flex-col md:flex-row items-center gap-4 font-bold uppercase text-[1.1rem]">
 							<button
 								aria-label="navigation-button"
 								onClick={() => handleScroll(contactRef)}
@@ -193,15 +192,15 @@ export default function Home({ fetchedProjects }) {
 				<div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-[2rem] lg:flex-row md:justify-between">
 					<div className="lg:w-[53%]">
 						<h2 className={`${font.className}`}>{translate("valuePropositionHeading")}</h2>
-						<div className="mt-2 text-[1.17rem]">
-							<div className="space-y-3">
+						<div className="mt-2">
+							<div className="space-y-3 text-[1.17rem]">
 								<p className="">{translate("valuePropositionSubtitle1")}</p>
 								<p className="">{translate("valuePropositionSubtitle2")}</p>
 								<p className="">{translate("valuePropositionSubtitle3")}</p>
 							</div>
-							<div className="flex mt-4 gap-4 items-center">
+							<div className="flex mt-4 gap-4 items-center text-[1.1rem]">
 								<Link
-									className="text-center uppercase transition duration-[350ms] dark:bg-primaryDark lg:hover:bg-primaryDark bg-primaryLight px-4 py-[15px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
+									className="text-center transition duration-[350ms] dark:bg-primaryDark lg:hover:bg-primaryDark bg-primaryLight px-4 py-[12px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 									href="/#contact"
 								>
 									{otherTranslate("cta")}
@@ -210,7 +209,7 @@ export default function Home({ fetchedProjects }) {
 									target="_blank"
 									href="https://bit.ly/41YYvoS"
 									locale={router.locale}
-									className="uppercase font-medium text-center border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primaryDark px-8 py-[13px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
+									className="font-medium capitalize text-center border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primaryDark px-8 py-[10px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
 								>
 									{translate("resume")}
 								</Link>
@@ -289,9 +288,9 @@ export default function Home({ fetchedProjects }) {
 					<div className="mb-[1.5rem] lg:w-[50%] xl:w-[49%]">
 						<h2 className={`${font.className} mb-2`}>{translate("aboutHeading")}</h2>
 						<p className="text-[1.17rem]">{translate("aboutCopy")} </p>
-						<div className="flex mt-4 gap-4 items-center">
+						<div className="flex mt-4 gap-4 items-center text-[1.1rem]">
 							<Link
-								className="text-center uppercase transition duration-[350ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[15px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
+								className="text-center transition duration-[350ms] dark:bg-primary lg:hover:bg-primary bg-red-600 px-4 py-[12px] rounded-[1rem] lg:dark:hover:bg-red-500 text-white"
 								href="/#contact"
 							>
 								{otherTranslate("cta")}
@@ -300,7 +299,7 @@ export default function Home({ fetchedProjects }) {
 								target="_blank"
 								href="https://bit.ly/41YYvoS"
 								locale={router.locale}
-								className="uppercase font-medium text-center border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primary px-8 py-[14px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
+								className="font-medium text-center capitalize border-2 border-red-500 dark:border-2 lg:hover:border-2 lg:hover:border-primary dark:border-primary px-8 py-[10px] rounded-[1rem] lg:dark:hover:border-2 lg:dark:hover:border-red-500 dark:text-white"
 							>
 								{translate("resume")}
 							</Link>

@@ -78,7 +78,7 @@ const Projects = ({ fetchedProjects }) => {
 									<td className="p-4 pl-0 pt-0">
 										<Link href={project.slug.current} target="_blank" className="flex gap-[4px] group">
 											{project.title[locale]}
-											<LinkArr hover="group-hover:translate-y-[-0.2rem]  group-hover:translate-x-[0.2rem]" />
+											<LinkArr hover="lg:group-hover:translate-y-[-0.2rem]  lg:group-hover:translate-x-[0.2rem]" />
 										</Link>
 									</td>
 									<td className="hidden md:table-cell p-4 pl-0 pt-0">{project.description[locale]}</td>
