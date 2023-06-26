@@ -32,39 +32,14 @@ const Projects = ({ fetchedProjects }) => {
 
 			<section className="pt-[5rem]">
 				<div className="w-[90%] lg:w-[80%] mx-auto">
-					<div className="">
-						<h1 className="">{translate("projectHeading")}</h1>
-						<p className="">{translate("projectSubHeading")}</p>
+					<div className="space-y-2 mb-6">
+						<h1 className="text-[2.5rem] font-bold leading-[1.3]">{translate("projectHeading")}</h1>
+						<p className="text-[1.1rem]">{translate("projectSubHeading")}</p>
 					</div>
-
-					{/* <div className="">
-						{fetchedProjects.map((project, index) => (
-							<div key={project.name} className="grid grid-cols-4 gap-2">
-								<p className="">{project.date}</p>
-								<p className="">{project.title[locale]}</p>
-								<p className="hidden lg:block">{project.description[locale]}</p>
-								<div className="hidden lg:block">
-									{project.technologies.map((tech) => (
-										<span key={tech} className="">
-											{tech}
-										</span>
-									))}
-								</div>
-								<div className="">
-									<Link href={project.github} target="_blank" className="">
-										<span className="">Code</span>
-									</Link>
-									<Link href={project.link} target="_blank" className="">
-										<span className="">Preview</span>
-									</Link>
-								</div>
-							</div>
-						))}
-					</div> */}
 
 					<table className="text-left w-full">
 						<thead className="">
-							<tr className="">
+							<tr className="text-[1.2rem]">
 								<th className="p-5 pl-0">Date</th>
 								<th className="p-5 pl-0">Title</th>
 								<th className="hidden md:table-cell p-5 pl-0">Description</th>
