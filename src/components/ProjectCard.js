@@ -23,19 +23,19 @@ const ProjectCard = ({ project, locale }) => {
 					className="projectCard-img rounded-tr-[1rem] rounded-tl-[1rem]"
 				/>
 			</div>
-			<div className="p-4 py-7 flex flex-col gap-2 font-medium">
+			<div className="p-4 py-7 flex flex-col gap-3 font-medium">
 				<div className="flex gap-2 items-end">
 					<Link
 						href={`/projects/${projectSlug}`}
-						className="text-[1.3rem]  text-primaryLight dark:text-primaryDark leading-[1.3] flex gap-1"
+						className="text-[1.3rem] text-primaryLight dark:text-primaryDark leading-[1.3] flex gap-1"
 					>
 						{title[locale]}
 					</Link>
 				</div>
 				<p className="">{description[locale]}</p>
-				<div className="space-x-2">
+				<div className="flex flex-wrap gap-2">
 					{technologies.map((tech) => (
-						<span key={tech} className="bg-black dark:bg-white p-2 py-1 rounded-full text-xs text-white dark:text-black font-medium">
+						<span key={tech} className="bg-black dark:bg-white p-2 py-1 rounded-full text-sm text-white dark:text-black font-medium">
 							{tech}
 						</span>
 					))}
